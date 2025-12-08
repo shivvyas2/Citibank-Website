@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { AlertTriangle, ArrowRight, CheckCircle2, ImageIcon } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -39,13 +39,12 @@ export function Hero() {
         </div>
       </div>
       
-      {/* Strategic Gap Content */}
+      {/* Strategic Gap Content - Left Text Block Only */}
       <div className="container mx-auto px-6 mt-16 md:mt-24">
-        <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-start">
-          {/* Left Text Block */}
+        <div className="max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="space-y-6"
@@ -89,124 +88,6 @@ export function Hero() {
               </p>
               <p className="text-foreground font-medium pt-2">
                 LUMIQ AI can close this gap with a turnkey Credit Journey™ that integrates within 90 days.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Right Side - Phone Mockups Comparison */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
-          >
-            {/* Header */}
-            <div className="text-center lg:text-left">
-              <h2 className="text-xl font-bold text-foreground mb-2">Who has in-app credit intelligence today?</h2>
-              <p className="text-sm text-muted-foreground">Consumer & business credit visibility vs Citi</p>
-            </div>
-
-            {/* Two Phone Mockups Side by Side */}
-            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-              {/* Competitor Phone Mockup (e.g., Chase) */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="space-y-3"
-              >
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-sm font-semibold text-foreground">Chase</span>
-                  <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
-                    Credit Journey
-                  </span>
-                </div>
-                {/* Phone Frame */}
-                <div className="relative mx-auto" style={{ width: '280px', maxWidth: '100%' }}>
-                  {/* Phone Frame Outer */}
-                  <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
-                    {/* Phone Screen Bezel */}
-                    <div className="bg-black rounded-[2rem] p-1.5">
-                      {/* Notch */}
-                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
-                      {/* Screen */}
-                      <div className="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5] relative">
-                        <img 
-                          src="/placeholder.svg" 
-                          alt="Chase Credit Journey App" 
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                            const placeholder = (e.target as HTMLImageElement).nextElementSibling;
-                            if (placeholder) (placeholder as HTMLElement).style.display = 'flex';
-                          }}
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center bg-muted/30" style={{ display: 'none' }}>
-                          <div className="text-center p-4">
-                            <ImageIcon className="w-8 h-8 text-muted-foreground/50 mx-auto mb-2" />
-                            <span className="text-xs text-muted-foreground/70">Add Chase mockup image</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Citi Phone Mockup */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="space-y-3"
-              >
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-sm font-semibold text-foreground">Citi</span>
-                  <span className="px-2 py-0.5 rounded-full bg-warning/20 border border-warning/50 text-warning text-xs font-bold flex items-center gap-1">
-                    <AlertTriangle className="w-3 h-3" />
-                    No credit journey
-                  </span>
-                </div>
-                {/* Phone Frame */}
-                <div className="relative mx-auto" style={{ width: '280px', maxWidth: '100%' }}>
-                  {/* Phone Frame Outer */}
-                  <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl ring-2 ring-warning/30">
-                    {/* Phone Screen Bezel */}
-                    <div className="bg-black rounded-[2rem] p-1.5">
-                      {/* Notch */}
-                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
-                      {/* Screen */}
-                      <div className="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5] relative">
-                        <img 
-                          src="/placeholder.svg" 
-                          alt="Citi App - No Credit Journey" 
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                            const placeholder = (e.target as HTMLImageElement).nextElementSibling;
-                            if (placeholder) (placeholder as HTMLElement).style.display = 'flex';
-                          }}
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center bg-warning/5" style={{ display: 'none' }}>
-                          <div className="text-center p-4">
-                            <ImageIcon className="w-8 h-8 text-warning/60 mx-auto mb-2" />
-                            <span className="text-xs text-warning/80 font-medium">Add Citi mockup image</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Footer Note */}
-            <div className="text-center pt-4">
-              <p className="text-xs text-muted-foreground">
-                Data reflects publicly available product launches. LUMIQ AI Business Credit Journey™ closes this gap.
               </p>
             </div>
           </motion.div>

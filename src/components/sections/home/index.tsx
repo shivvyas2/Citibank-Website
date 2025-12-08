@@ -1,4 +1,5 @@
 export { Hero } from "./Hero";
+export { BankComparison } from "./BankComparison";
 export { StrategicBridge } from "./StrategicBridge";
 // Additional sections can be exported here as they are created
 // export { DualEngine } from "./DualEngine";

@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { CheckCircle2, Shield, Zap, TrendingUp, Database, Lock, GitBranch, CloudCog, FileCheck, Users, ArrowRight, BarChart3, Info, Download, Briefcase, UserCheck, Target, LineChart as LineChartIcon, AlertTriangle, Upload, ImageIcon, DollarSign, Clock } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { Footer } from "@/components/Footer";
-import { Hero, StrategicBridge } from "@/components/sections/home";
+import { Hero, BankComparison, StrategicBridge } from "@/components/sections/home";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -53,6 +53,7 @@ function Index() {
   return (
     <PageLayout>
       <Hero />
+      <BankComparison />
       <StrategicBridge />
 
       {/* Citi Dual-Engine Hero Section */}
