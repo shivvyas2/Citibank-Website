@@ -18,49 +18,24 @@ function PhoneMockup({ bankName, badge, imagePath, index }: PhoneMockupProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="flex flex-col items-center gap-3"
+      className="flex flex-col items-center"
     >
-      <div className="flex items-center gap-2 mb-1">
-        <span className="text-sm font-semibold text-foreground">{bankName}</span>
-        {badge && (
-          <span
-            className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-              badge.variant === "success"
-                ? "bg-success/10 border border-success/30 text-success"
-                : "bg-warning/20 border border-warning/50 text-warning"
-            }`}
-          >
-            {badge.text}
-          </span>
-        )}
-      </div>
-      {/* Phone Frame */}
-      <div className="relative" style={{ width: "140px", maxWidth: "100%" }}>
-        {/* Phone Frame Outer */}
-        <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[1.5rem] p-1.5 shadow-lg">
-          {/* Phone Screen Bezel */}
-          <div className="bg-black rounded-[1.2rem] p-1">
-            {/* Notch */}
-            <div className="absolute top-1 left-1/2 -translate-x-1/2 w-12 h-3 bg-black rounded-full z-10"></div>
-            {/* Screen */}
-            <div className="bg-white rounded-[0.9rem] overflow-hidden aspect-[9/19.5] relative">
-              {imagePath ? (
-                <img
-                  src={imagePath}
-                  alt={`${bankName} App Screenshot`}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center bg-muted/30">
-                  <div className="text-center p-2">
-                    <div className="text-2xl mb-1">📱</div>
-                    <span className="text-[10px] text-muted-foreground/70">Add {bankName} mockup</span>
-                  </div>
-                </div>
-              )}
+      {/* Mockup Image - No frame since images already have frames */}
+      <div className="relative w-full max-w-[200px]">
+        {imagePath ? (
+          <img
+            src={imagePath}
+            alt={`${bankName} Mockup`}
+            className="w-full h-auto object-contain"
+          />
+        ) : (
+          <div className="w-full aspect-[9/19.5] flex items-center justify-center bg-muted/30 rounded-lg border-2 border-dashed border-muted-foreground/30">
+            <div className="text-center p-4">
+              <div className="text-3xl mb-2">📱</div>
+              <span className="text-xs text-muted-foreground">Add mockup</span>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </motion.div>
   );
@@ -109,47 +84,47 @@ function BentoBox({ title, phones, index }: BentoBoxProps) {
 export function BankComparison() {
   const bentoBoxes = [
     {
-      title: "Consumer Credit Intelligence",
+      title: "Chase",
       phones: [
         {
-          bankName: "Chase",
+          bankName: "Chase Consumer",
           badge: { text: "Credit Journey", variant: "success" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
+          imagePath: "/Hero-Mockups/Chase-Consumer.png",
         },
+        {
+          bankName: "Chase Email",
+          badge: { text: "Credit Journey", variant: "success" as const },
+          imagePath: "/Hero-Mockups/chase-email.png",
+        },
+      ],
+    },
+    {
+      title: "Wells Fargo",
+      phones: [
+        {
+          bankName: "Wells Fargo Email",
+          badge: { text: "Credit Close-Up", variant: "success" as const },
+          imagePath: "/Hero-Mockups/Wells-Fargo-Email.png",
+        },
+        {
+          bankName: "Wells Fargo App",
+          badge: { text: "Credit Close-Up", variant: "success" as const },
+          imagePath: "/Hero-Mockups/wells-fargo-app.png",
+        },
+      ],
+    },
+    {
+      title: "Capital One",
+      phones: [
         {
           bankName: "Capital One",
           badge: { text: "CreditWise", variant: "success" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
-        },
-      ],
-    },
-    {
-      title: "Business Credit Intelligence",
-      phones: [
-        {
-          bankName: "Wells Fargo",
-          badge: { text: "Credit Close-Up", variant: "success" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
+          imagePath: "/Hero-Mockups/capital one.png",
         },
         {
-          bankName: "Bank of America",
-          badge: { text: "Business Advantage", variant: "success" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
-        },
-      ],
-    },
-    {
-      title: "Competitive Solutions",
-      phones: [
-        {
-          bankName: "American Express",
-          badge: { text: "Credit Score", variant: "success" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
-        },
-        {
-          bankName: "Discover",
-          badge: { text: "Credit Scorecard", variant: "success" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
+          bankName: "Capital One Email",
+          badge: { text: "CreditWise", variant: "success" as const },
+          imagePath: "/Hero-Mockups/capital-one-email.png",
         },
       ],
     },
@@ -159,12 +134,12 @@ export function BankComparison() {
         {
           bankName: "Citi Consumer",
           badge: { text: "No credit journey", variant: "warning" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
+          imagePath: "/Hero-Mockups/citi-consumer.png",
         },
         {
           bankName: "Citi Business",
           badge: { text: "No credit journey", variant: "warning" as const },
-          imagePath: "/placeholder.svg", // Replace with actual image path
+          imagePath: "/Hero-Mockups/citi-business.png",
         },
       ],
     },
