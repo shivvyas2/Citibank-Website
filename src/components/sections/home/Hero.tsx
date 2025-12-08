@@ -101,126 +101,121 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Side - Comparison Panel */}
+          {/* Right Side - Phone Mockups Comparison */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-6"
           >
-            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg">
-              {/* Panel Header */}
-              <div className="bg-primary/5 px-6 py-5 border-b border-border">
-                <h2 className="text-lg font-bold text-foreground">Who has in-app credit intelligence today?</h2>
-                <p className="text-sm text-muted-foreground mt-1">Consumer & business credit visibility vs Citi</p>
-              </div>
+            {/* Header */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-xl font-bold text-foreground mb-2">Who has in-app credit intelligence today?</h2>
+              <p className="text-sm text-muted-foreground">Consumer & business credit visibility vs Citi</p>
+            </div>
 
-              {/* Comparison Rows */}
-              <div className="divide-y divide-border">
-                {/* Chase Row */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="p-5 hover:bg-muted/50 transition-colors duration-200 group"
-                >
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-lg font-bold text-foreground">Chase</span>
-                        <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
-                          Credit Journey — 2016 →
-                        </span>
+            {/* Two Phone Mockups Side by Side */}
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Competitor Phone Mockup (e.g., Chase) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="space-y-3"
+              >
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-sm font-semibold text-foreground">Chase</span>
+                  <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
+                    Credit Journey
+                  </span>
+                </div>
+                {/* Phone Frame */}
+                <div className="relative mx-auto" style={{ width: '280px', maxWidth: '100%' }}>
+                  {/* Phone Frame Outer */}
+                  <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
+                    {/* Phone Screen Bezel */}
+                    <div className="bg-black rounded-[2rem] p-1.5">
+                      {/* Notch */}
+                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
+                      {/* Screen */}
+                      <div className="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5] relative">
+                        <img 
+                          src="/placeholder.svg" 
+                          alt="Chase Credit Journey App" 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none';
+                            const placeholder = (e.target as HTMLImageElement).nextElementSibling;
+                            if (placeholder) (placeholder as HTMLElement).style.display = 'flex';
+                          }}
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-muted/30" style={{ display: 'none' }}>
+                          <div className="text-center p-4">
+                            <ImageIcon className="w-8 h-8 text-muted-foreground/50 mx-auto mb-2" />
+                            <span className="text-xs text-muted-foreground/70">Add Chase mockup image</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="w-full lg:w-48 aspect-video bg-muted border border-dashed border-border rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-primary transition-colors">
-                      <ImageIcon className="w-6 h-6 text-muted-foreground/50" />
-                      <span className="text-xs text-muted-foreground/70 text-center px-2">Add Credit Journey screenshot here</span>
-                    </div>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
-                {/* Capital One Row */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                  className="p-5 hover:bg-muted/50 transition-colors duration-200 group"
-                >
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-lg font-bold text-foreground">Capital One</span>
-                        <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
-                          CreditWise — 2014 →
-                        </span>
+              {/* Citi Phone Mockup */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="space-y-3"
+              >
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-sm font-semibold text-foreground">Citi</span>
+                  <span className="px-2 py-0.5 rounded-full bg-warning/20 border border-warning/50 text-warning text-xs font-bold flex items-center gap-1">
+                    <AlertTriangle className="w-3 h-3" />
+                    No credit journey
+                  </span>
+                </div>
+                {/* Phone Frame */}
+                <div className="relative mx-auto" style={{ width: '280px', maxWidth: '100%' }}>
+                  {/* Phone Frame Outer */}
+                  <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl ring-2 ring-warning/30">
+                    {/* Phone Screen Bezel */}
+                    <div className="bg-black rounded-[2rem] p-1.5">
+                      {/* Notch */}
+                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
+                      {/* Screen */}
+                      <div className="bg-white rounded-[1.5rem] overflow-hidden aspect-[9/19.5] relative">
+                        <img 
+                          src="/placeholder.svg" 
+                          alt="Citi App - No Credit Journey" 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none';
+                            const placeholder = (e.target as HTMLImageElement).nextElementSibling;
+                            if (placeholder) (placeholder as HTMLElement).style.display = 'flex';
+                          }}
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-warning/5" style={{ display: 'none' }}>
+                          <div className="text-center p-4">
+                            <ImageIcon className="w-8 h-8 text-warning/60 mx-auto mb-2" />
+                            <span className="text-xs text-warning/80 font-medium">Add Citi mockup image</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="w-full lg:w-48 aspect-video bg-muted border border-dashed border-border rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-primary transition-colors">
-                      <ImageIcon className="w-6 h-6 text-muted-foreground/50" />
-                      <span className="text-xs text-muted-foreground/70 text-center px-2">Add CreditWise screenshot here</span>
-                    </div>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
+            </div>
 
-                {/* Wells Fargo Row */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
-                  className="p-5 hover:bg-muted/50 transition-colors duration-200 group"
-                >
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-lg font-bold text-foreground">Wells Fargo</span>
-                        <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
-                          Credit Close-Up — 2023 →
-                        </span>
-                      </div>
-                    </div>
-                    <div className="w-full lg:w-48 aspect-video bg-muted border border-dashed border-border rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-primary transition-colors">
-                      <ImageIcon className="w-6 h-6 text-muted-foreground/50" />
-                      <span className="text-xs text-muted-foreground/70 text-center px-2">Add Wells business credit screenshot here</span>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Citi Row - Highlighted */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 }}
-                  className="p-5 bg-warning/5 border-l-4 border-warning relative overflow-hidden group"
-                >
-                  <div className="relative flex flex-col lg:flex-row lg:items-center gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-lg font-bold text-foreground">Citi</span>
-                        <span className="px-2 py-0.5 rounded-full bg-warning/20 border border-warning/50 text-warning text-xs font-bold flex items-center gap-1">
-                          <AlertTriangle className="w-3 h-3" />
-                          No consumer or business credit journey
-                        </span>
-                      </div>
-                    </div>
-                    <div className="w-full lg:w-48 aspect-video bg-warning/10 border-2 border-dashed border-warning/40 rounded-lg flex flex-col items-center justify-center gap-2">
-                      <ImageIcon className="w-6 h-6 text-warning/60" />
-                      <span className="text-xs text-warning/80 text-center px-2 font-medium">Add Citi app home screenshot (no credit widget)</span>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Panel Footer */}
-              <div className="bg-primary/5 px-6 py-4 border-t border-border">
-                <p className="text-xs text-muted-foreground text-center">
-                  Data reflects publicly available product launches. LUMIQ AI Business Credit Journey™ closes this gap.
-                </p>
-              </div>
+            {/* Footer Note */}
+            <div className="text-center pt-4">
+              <p className="text-xs text-muted-foreground">
+                Data reflects publicly available product launches. LUMIQ AI Business Credit Journey™ closes this gap.
+              </p>
             </div>
           </motion.div>
         </div>
