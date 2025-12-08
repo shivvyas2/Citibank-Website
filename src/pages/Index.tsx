@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { CheckCircle2, Shield, Zap, TrendingUp, Database, Lock, GitBranch, CloudCog, FileCheck, Users, ArrowRight, BarChart3, Info, Download, Briefcase, UserCheck, Target, LineChart as LineChartIcon, AlertTriangle, Upload, ImageIcon, DollarSign, Clock } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import { Footer } from "@/components/Footer";
+import { Hero, StrategicBridge } from "@/components/sections/home";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // Animated counter hook
 function useCountUp(target: number, isInView: boolean, suffix = "") {
@@ -40,7 +41,7 @@ function MetricCard({ value, label, suffix = "", delay = 0 }: { value: number; l
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="flex flex-col items-center p-6 rounded-xl bg-card/50 backdrop-blur border border-border/50 hover:border-primary/50 transition-all duration-300"
+      className="flex flex-col items-center p-6 rounded-xl bg-card border border-border shadow-sm hover:border-primary/50 transition-all duration-300"
     >
       <div className="text-4xl font-bold text-primary mb-2">{animatedValue}</div>
       <div className="text-sm text-muted-foreground text-center">{label}</div>
@@ -51,393 +52,11 @@ function MetricCard({ value, label, suffix = "", delay = 0 }: { value: number; l
 function Index() {
   return (
     <PageLayout>
-      {/* Citi Strategic Gap Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden py-16 lg:py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-warning/5 via-transparent to-primary/5" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-start">
-            {/* Left Text Block */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
-              {/* Eyebrow Label */}
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-warning/10 border border-warning/30"
-              >
-                <AlertTriangle className="w-4 h-4 text-warning" />
-                <span className="text-xs font-bold tracking-widest text-warning uppercase">The Strategic Gap</span>
-              </motion.div>
-
-              {/* Main Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-                Citi is the only top-4 bank{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-warning to-destructive">
-                  without
-                </span>{" "}
-                a built-in credit intelligence layer.
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
-                Unlock 15–20% more approvals from declined applications — without elevating risk.
-              </p>
-              
-              {/* Compliance Blurb */}
-              <p className="text-sm text-muted-foreground/70 leading-relaxed">
-                Built to align with Reg B (ECOA) and SPCP frameworks — trusted, fair, compliant expansion of approvals.
-              </p>
-
-              {/* Strategic Gap Body Text */}
-              <div className="space-y-4 text-muted-foreground leading-relaxed border-l-2 border-warning/30 pl-5">
-                <p className="font-medium text-foreground">
-                  Citi customers cannot:
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-warning mt-1">•</span>
-                    <span>View their real credit score</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-warning mt-1">•</span>
-                    <span>Prequalify instantly</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-warning mt-1">•</span>
-                    <span>See predictive card or loan pathways</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-warning mt-1">•</span>
-                    <span>Activate offers inside the Citi App</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-warning mt-1">•</span>
-                    <span>Build or strengthen thin credit files</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-warning mt-1">•</span>
-                    <span>Recover from declines with guided steps</span>
-                  </li>
-                </ul>
-                <p className="text-warning font-semibold pt-3">
-                  This single missing capability breaks Citi's funnel.
-                </p>
-                <p className="text-sm">
-                  Competitors intercept intent before Citi even sees the demand signal — using Citi's own customers' open-banking data.
-                </p>
-                <p className="text-foreground font-medium pt-2">
-                  LUMIQ AI can close this gap with a turnkey Credit Journey™ that integrates within 90 days.
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
-              >
-                <Link to="/how-it-works">
-                  <Button size="lg" className="text-base px-6 py-6 rounded-xl shadow-[0_0_30px_rgba(51,204,255,0.3)] hover:shadow-[0_0_40px_rgba(51,204,255,0.5)] transition-all duration-300">
-                    See how it works in 90 seconds
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <Link to="/pilot">
-                  <Button variant="outline" size="lg" className="text-base px-6 py-6 rounded-xl border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
-                    Explore pilot for Q1 2026
-                  </Button>
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            {/* Right Side - Comparison Panel */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="bg-card/80 backdrop-blur-xl border border-border/60 rounded-2xl overflow-hidden shadow-2xl">
-                {/* Panel Header */}
-                <div className="bg-muted/50 px-6 py-5 border-b border-border/50">
-                  <h2 className="text-lg font-bold text-foreground">Who has in-app credit intelligence today?</h2>
-                  <p className="text-sm text-muted-foreground mt-1">Consumer & business credit visibility vs Citi</p>
-                </div>
-
-                {/* Comparison Rows */}
-                <div className="divide-y divide-border/40">
-                  {/* Chase Row */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                    className="p-5 hover:bg-muted/20 transition-colors duration-200 group"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-lg font-bold text-foreground">Chase</span>
-                          <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
-                            Credit Journey — 2016 →
-                          </span>
-                        </div>
-                      </div>
-                      <div className="w-full lg:w-48 aspect-video bg-muted/30 border border-dashed border-border/60 rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-primary/40 transition-colors">
-                        <ImageIcon className="w-6 h-6 text-muted-foreground/50" />
-                        <span className="text-xs text-muted-foreground/70 text-center px-2">Add Credit Journey screenshot here</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Capital One Row */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="p-5 hover:bg-muted/20 transition-colors duration-200 group"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-lg font-bold text-foreground">Capital One</span>
-                          <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
-                            CreditWise — 2014 →
-                          </span>
-                        </div>
-                      </div>
-                      <div className="w-full lg:w-48 aspect-video bg-muted/30 border border-dashed border-border/60 rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-primary/40 transition-colors">
-                        <ImageIcon className="w-6 h-6 text-muted-foreground/50" />
-                        <span className="text-xs text-muted-foreground/70 text-center px-2">Add CreditWise screenshot here</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Wells Fargo Row */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                    className="p-5 hover:bg-muted/20 transition-colors duration-200 group"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-lg font-bold text-foreground">Wells Fargo</span>
-                          <span className="px-2 py-0.5 rounded-full bg-success/10 border border-success/30 text-success text-xs font-medium">
-                            Credit Close-Up — 2023 →
-                          </span>
-                        </div>
-                      </div>
-                      <div className="w-full lg:w-48 aspect-video bg-muted/30 border border-dashed border-border/60 rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-primary/40 transition-colors">
-                        <ImageIcon className="w-6 h-6 text-muted-foreground/50" />
-                        <span className="text-xs text-muted-foreground/70 text-center px-2">Add Wells business credit screenshot here</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Citi Row - Highlighted */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, scale: [1, 1.01, 1] }}
-                    transition={{ delay: 0.7, scale: { delay: 1.2, duration: 0.4 } }}
-                    className="p-5 bg-warning/5 border-l-4 border-warning relative overflow-hidden group"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-warning/10 to-transparent opacity-50" />
-                    <div className="relative flex flex-col lg:flex-row lg:items-center gap-4">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-lg font-bold text-foreground">Citi</span>
-                          <span className="px-2 py-0.5 rounded-full bg-warning/20 border border-warning/50 text-warning text-xs font-bold flex items-center gap-1">
-                            <AlertTriangle className="w-3 h-3" />
-                            No consumer or business credit journey
-                          </span>
-                        </div>
-                      </div>
-                      <div className="w-full lg:w-48 aspect-video bg-warning/10 border-2 border-dashed border-warning/40 rounded-lg flex flex-col items-center justify-center gap-2">
-                        <ImageIcon className="w-6 h-6 text-warning/60" />
-                        <span className="text-xs text-warning/80 text-center px-2 font-medium">Add Citi app home screenshot (no credit widget)</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Panel Footer */}
-                <div className="bg-muted/30 px-6 py-4 border-t border-border/50">
-                  <p className="text-xs text-muted-foreground text-center">
-                    Data reflects publicly available product launches. LUMIQ AI Business Credit Journey™ closes this gap.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Strategic Bridge Section */}
-      <section className="py-20 relative bg-gradient-to-b from-background via-card/20 to-background">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="max-w-5xl mx-auto"
-          >
-            {/* Title with Citi red accent */}
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                What Citi Is Missing — And What We Built To{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-warning to-destructive">
-                  Close It Overnight.
-                </span>
-              </h2>
-            </div>
-
-            {/* Subtitle */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center mb-14 max-w-4xl mx-auto space-y-4"
-            >
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Citi is the only top-4 bank with neither a consumer credit journey nor a business credit journey inside its app.
-                <br />
-                <span className="text-foreground font-medium">So competitors own Citi's intent moments across both segments.</span>
-              </p>
-            </motion.div>
-
-            {/* Two-Column Layout */}
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-14">
-              {/* Consumer Use Cases */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-card/40 backdrop-blur border border-border/50 rounded-2xl p-6 lg:p-8"
-              >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <Users className="w-5 h-5 text-secondary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground">Consumer customers need an in-app place to:</h3>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>View their real credit score</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>Understand eligibility</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>Receive dynamic pre-qualified card/loan offers</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>Strengthen their credit file</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>Take action inside the Citi App</span>
-                  </li>
-                </ul>
-              </motion.div>
-
-              {/* Business Use Cases */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-card/40 backdrop-blur border border-primary/30 rounded-2xl p-6 lg:p-8 shadow-[0_0_30px_rgba(51,204,255,0.1)]"
-              >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <Briefcase className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground">Business customers need an in-app place to:</h3>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>See Owner FICO/VantageScore + Business Score in one dashboard</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Understand funding readiness</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>View instant prequalifications for Citi Business cards</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Build creditworthiness with guided steps</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Convert into higher-quality lending funnels</span>
-                  </li>
-                </ul>
-              </motion.div>
-            </div>
-
-            {/* Concluding Paragraph */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-center max-w-3xl mx-auto mb-10"
-            >
-              <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-                Chase, Capital One, and Wells Fargo each built only one side of this stack.
-                <br />
-                <span className="text-warning font-semibold">Citi has neither side — which is why intent escapes.</span>
-              </p>
-              <p className="text-lg text-foreground font-semibold">
-                LUMIQ AI built both sides, fully functional today — ready for Citi.
-              </p>
-              <p className="text-base text-muted-foreground mt-4">
-                Below is the dual-system approach: <span className="text-secondary">Consumer Credit Journey</span> + <span className="text-primary">Business Credit Journey</span>
-              </p>
-            </motion.div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex justify-center"
-            >
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="flex flex-col items-center gap-2 text-muted-foreground"
-              >
-                <span className="text-xs uppercase tracking-widest">See the solution</span>
-                <ArrowRight className="w-5 h-5 rotate-90" />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <Hero />
+      <StrategicBridge />
 
       {/* Citi Dual-Engine Hero Section */}
-      <section className="py-24 relative bg-[#0a1628]">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0a1628] to-background" />
+      <section className="py-24 relative bg-background">
         
         <div className="container mx-auto px-6 relative z-10">
           {/* Two Cards Side by Side */}
@@ -451,7 +70,7 @@ function Index() {
               transition={{ duration: 0.7 }}
               className="relative"
             >
-              <div className="h-full bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl border border-secondary/30 rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(92,191,239,0.15)]">
+              <div className="h-full bg-card border border-border rounded-2xl overflow-hidden shadow-lg">
                 {/* Card Header */}
                 <div className="bg-secondary/10 px-6 py-5 border-b border-secondary/20">
                   <div className="flex items-center gap-3 mb-2">
@@ -522,7 +141,7 @@ function Index() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="relative"
             >
-              <div className="h-full bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl border border-primary/40 rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(51,204,255,0.2)]">
+              <div className="h-full bg-card border border-primary/30 rounded-2xl overflow-hidden shadow-lg">
                 {/* Card Header */}
                 <div className="bg-primary/10 px-6 py-5 border-b border-primary/20">
                   <div className="flex items-center gap-3 mb-2">
@@ -644,7 +263,7 @@ function Index() {
       </section>
 
       {/* Section 4: THE COMPETITIVE COST */}
-      <section className="py-24 relative" style={{ background: 'linear-gradient(180deg, #0B0F14 0%, #131920 100%)' }}>
+      <section className="py-24 relative bg-background-secondary">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -697,7 +316,7 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="bg-[#111821] border border-[#1E2833] rounded-2xl p-6 md:p-8 shadow-[0_0_40px_rgba(239,68,68,0.1)]">
+              <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-lg">
                 <h4 className="text-xl font-bold text-foreground mb-6">
                   Estimated Annual Revenue Leakage
                 </h4>
@@ -747,7 +366,7 @@ function Index() {
       </section>
 
       {/* Section 5: THE IMPACT - WHAT CITI GAINS */}
-      <section className="py-24 relative" style={{ background: 'linear-gradient(180deg, #0E141B 0%, #16212B 100%)' }}>
+      <section className="py-24 relative bg-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -772,7 +391,7 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 shadow-[0_-10px_40px_rgba(51,204,255,0.05)]"
+              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
               <h4 className="text-xl font-bold text-primary mb-4">Consumer Lift</h4>
               <ul className="space-y-2">
@@ -801,7 +420,7 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 shadow-[0_-10px_40px_rgba(51,204,255,0.05)]"
+              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
               <h4 className="text-xl font-bold text-primary mb-4">Business Lift</h4>
               <ul className="space-y-2">
@@ -830,7 +449,7 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 shadow-[0_-10px_40px_rgba(51,204,255,0.05)]"
+              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
               <h4 className="text-xl font-bold text-primary mb-4">Total Financial Impact</h4>
               <ul className="space-y-2">
@@ -855,7 +474,7 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 shadow-[0_-10px_40px_rgba(51,204,255,0.05)]"
+              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
               <h4 className="text-xl font-bold text-primary mb-4">Development Savings</h4>
               <ul className="space-y-2">
@@ -946,7 +565,7 @@ function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-all duration-300 group text-center">
+                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/50 transition-all duration-300 group text-center">
                   <CardContent className="pt-8 pb-8">
                     <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 border border-primary/20 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl font-bold text-primary">{item.step}</span>
@@ -989,7 +608,7 @@ function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-card/50 backdrop-blur border-border/50 hover:border-primary/30 transition-all duration-300 text-center">
+                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/30 transition-all duration-300 text-center">
                   <CardContent className="pt-8 pb-8">
                     <role.icon className="w-10 h-10 text-primary mx-auto mb-4" />
                     <h3 className="text-base font-bold mb-2">{role.title}</h3>
@@ -1043,7 +662,7 @@ function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-card/50 backdrop-blur border-border/50 hover:border-primary/30 transition-all duration-300">
+                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/30 transition-all duration-300">
                   <CardContent className="pt-8 pb-8 text-center">
                     <item.icon className={`w-12 h-12 ${item.color} mx-auto mb-4`} />
                     <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
@@ -1057,7 +676,7 @@ function Index() {
       </section>
 
       {/* Security & Compliance */}
-      <section className="py-24 relative bg-card/20">
+      <section className="py-24 relative bg-background-secondary">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1105,7 +724,7 @@ function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-card/50 backdrop-blur border-border/50">
+                <Card className="h-full bg-card border border-border shadow-sm">
                   <CardContent className="pt-6 pb-6">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
@@ -1177,7 +796,7 @@ function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-card/50 backdrop-blur border-border/50 hover:border-primary/30 transition-all duration-300">
+                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/30 transition-all duration-300">
                   <CardContent className="pt-8 pb-8">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
@@ -1197,8 +816,7 @@ function Index() {
       </section>
 
       {/* Final CTA */}
-      <section id="cta" className="py-32 relative scroll-mt-20">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
+      <section id="cta" className="py-32 relative scroll-mt-20 bg-primary/5">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1213,13 +831,15 @@ function Index() {
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Non-disruptive integration. Measurable results. Built on proven principles.
             </p>
-            <Button size="lg" className="text-lg px-10 py-7 rounded-xl shadow-[0_0_40px_rgba(51,204,255,0.4)] hover:shadow-[0_0_60px_rgba(51,204,255,0.6)] transition-all duration-300">
+            <Button size="lg" className="gap-2">
               Book a 20-minute pilot review — see conversion lift & model audit in action
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Button>
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </PageLayout>
   );
 }
