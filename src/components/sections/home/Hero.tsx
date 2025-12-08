@@ -5,18 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-44 md:pt-44 lg:pt-52 bg-gradient-to-b from-primary/10 to-background">
+    <section className="relative overflow-hidden pt-24 md:pt-28 lg:pt-32 bg-gradient-to-b from-primary/10 to-background">
       <div className="container mx-auto">
         <div className="space-y-8 text-center">
           <div className="space-y-4">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 pl-1 pr-4 py-1 bg-background text-primary rounded-full text-xs font-ui font-semibold uppercase tracking-wide">
-              <div className="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
-                <AlertTriangle className="w-4 h-4 text-primary" />
-              </div>
-              THE STRATEGIC GAP
-            </div>
-
             {/* Heading */}
             <h1 className="mx-auto max-w-4xl text-5xl md:text-7xl lg:text-8xl font-heading leading-tight tracking-tight text-foreground">
               Citi is the only top-4 bank{" "}
