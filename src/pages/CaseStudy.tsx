@@ -307,7 +307,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
                               <img 
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.png" 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.PNG" 
                                 alt="Competitor Prequal Consumer"
                                 className="w-full h-auto rounded-lg max-w-xs mx-auto"
                                 loading="lazy"
@@ -606,7 +606,7 @@ export default function CaseStudy() {
                   </div>
                   <div className="bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
                     <img 
-                      src="/Case Study/lumiqai consumer + SMB/consumer/C.PNG" 
+                      src="/Case Study/lumiqai consumer + SMB/consumer/C.png" 
                       alt="Citi Consumer LUMIQ"
                       className="w-full h-auto rounded-lg max-w-md mx-auto"
                       loading="lazy"
@@ -620,7 +620,7 @@ export default function CaseStudy() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="order-2 lg:order-1 bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
                     <img 
-                      src="/Case Study/lumiqai consumer + SMB/Business/B.PNG" 
+                      src="/Case Study/lumiqai consumer + SMB/Business/B.png" 
                       alt="Citi Business LUMIQ"
                       className="w-full h-auto rounded-lg max-w-md mx-auto"
                       loading="lazy"
