@@ -51,17 +51,14 @@ export function Header() {
           {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <motion.div 
-              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
+              initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }} 
               transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-            className="h-10 w-10 grid place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary shadow-lg"
-            whileHover={{ scale: 1.05, rotate: 5 }}
+            className="font-heading text-xl font-bold tracking-tight text-foreground"
+            whileHover={{ scale: 1.05 }}
           >
-              <Building2 className="h-5 w-5 text-primary-foreground" />
+              LUMIQ × Citi
           </motion.div>
-            <div className="font-heading text-xl font-bold tracking-tight text-foreground">
-              LUMIQ AI × Citi
-          </div>
           </Link>
 
           {/* Desktop Navigation */}

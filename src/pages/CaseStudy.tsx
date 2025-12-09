@@ -606,7 +606,7 @@ export default function CaseStudy() {
                   </div>
                   <div className="bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
                     <img 
-                      src="/Case Study/lumiqai consumer + SMB/consumer/Citi Consumer LUMIQ.png" 
+                      src="/Case Study/lumiqai consumer + SMB/consumer/C.PNG" 
                       alt="Citi Consumer LUMIQ"
                       className="w-full h-auto rounded-lg max-w-md mx-auto"
                       loading="lazy"
@@ -620,7 +620,7 @@ export default function CaseStudy() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="order-2 lg:order-1 bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
                     <img 
-                      src="/Case Study/lumiqai consumer + SMB/Business/Citi Business LUMIQ.png" 
+                      src="/Case Study/lumiqai consumer + SMB/Business/B.PNG" 
                       alt="Citi Business LUMIQ"
                       className="w-full h-auto rounded-lg max-w-md mx-auto"
                       loading="lazy"
