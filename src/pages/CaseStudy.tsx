@@ -165,20 +165,34 @@ export default function CaseStudy() {
                 <Card className="border border-destructive/30 shadow-sm hover:shadow-md transition-all">
                   <CardContent className="p-6 space-y-4">
                     <div>
-                      <h3 className="font-bold text-lg text-foreground">Ecosystem-Level Risk</h3>
-                      <p className="text-muted-foreground text-sm">Customers leave to check scores, get intercepted, never return to Citi</p>
+                      <h3 className="font-bold text-lg text-foreground mb-2">Ecosystem-Level Risk</h3>
+                      <p className="text-muted-foreground text-sm mb-4">Customers leave to check scores, get intercepted, never return to Citi</p>
+                      <div className="space-y-2 text-sm">
+                        <p className="text-foreground">
+                          <span className="font-semibold">Consumer Credit Visibility:</span> Customers use <span className="font-bold text-primary">Credit Karma</span> to check their credit scores, where they're immediately shown prequalification offers from competitors.
+                        </p>
+                        <p className="text-foreground">
+                          <span className="font-semibold">Business Credit Visibility:</span> SMB customers use <span className="font-bold text-primary">Right Nav</span> to check their business credit scores, where they're intercepted with business lending offers from competitors.
+                        </p>
+                      </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                      <img 
-                        src="/Case Study/Exec Diagnosis/Eco System Risk /Consumer.PNG" 
-                        alt="Ecosystem Risk Consumer"
-                        className="w-full h-auto rounded-lg max-w-sm mx-auto"
-                      />
-                      <img 
-                        src="/Case Study/Exec Diagnosis/Eco System Risk /Business.PNG" 
-                        alt="Ecosystem Risk Business"
-                        className="w-full h-auto rounded-lg max-w-sm mx-auto"
-                      />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-6">
+                      <div className="text-center">
+                        <p className="text-xs font-semibold text-foreground mb-2">Credit Karma (Consumer)</p>
+                        <img 
+                          src="/Case Study/Exec Diagnosis/Eco System Risk /Consumer.PNG" 
+                          alt="Ecosystem Risk Consumer - Credit Karma"
+                          className="w-full h-auto rounded-lg max-w-sm mx-auto"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <p className="text-xs font-semibold text-foreground mb-2">Right Nav (Business)</p>
+                        <img 
+                          src="/Case Study/Exec Diagnosis/Eco System Risk /Business.PNG" 
+                          alt="Ecosystem Risk Business - Right Nav"
+                          className="w-full h-auto rounded-lg max-w-sm mx-auto"
+                        />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -514,7 +528,7 @@ export default function CaseStudy() {
                   <Card className="border border-border shadow-sm">
                     <CardContent className="p-4 flex justify-center">
                       <img 
-                        src="/Case Study/Citi Lacks the credit in/consumer.png" 
+                        src="/Summary_.png" 
                         alt="Citi Lacks Consumer Credit Intelligence"
                         className="w-full h-auto rounded-lg max-w-xs"
                       />
@@ -525,7 +539,7 @@ export default function CaseStudy() {
                   <Card className="border border-border shadow-sm">
                     <CardContent className="p-4 flex justify-center">
                       <img 
-                        src="/Case Study/Citi Lacks the credit in/biz.png" 
+                        src="/summary 2.png" 
                         alt="Citi Lacks Business Credit Intelligence"
                         className="w-full h-auto rounded-lg max-w-xs"
                       />
