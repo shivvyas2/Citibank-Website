@@ -270,7 +270,7 @@ export default function Pilot() {
                 {/* Consumer 3-Screen Mockup */}
                 <div className="p-6 bg-background-secondary border-b border-border">
                   <img 
-                    src="/3 phone Consumer.png" 
+                    src="/images/3-phone-consumer.png" 
                     alt="Citi Consumer 3-Screen Mockup"
                     className="w-full h-auto rounded-lg max-w-2xl mx-auto"
                   />
@@ -315,7 +315,7 @@ export default function Pilot() {
                 {/* Business 3-Screen Mockup */}
                 <div className="p-6 bg-background-secondary border-b border-border">
                   <img 
-                    src="/3 phones Business.png" 
+                    src="/images/3-phones-business.png" 
                     alt="Citi Business 3-Screen Mockup"
                     className="w-full h-auto rounded-lg max-w-2xl mx-auto"
                   />

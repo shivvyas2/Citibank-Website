@@ -111,7 +111,7 @@ function Index() {
                 {/* Mockup Images - 3 Phones */}
                 <div className="mx-6 mt-6 flex items-center justify-center">
                   <img
-                    src="/3 phone Consumer.png"
+                    src="/images/3-phone-consumer.png"
                     alt="Citi Consumer Credit Journey - 3 Phone Mockups"
                     className="w-full max-w-full h-auto object-contain rounded-xl"
                   />
@@ -182,7 +182,7 @@ function Index() {
                 {/* Mockup Images - 3 Phones */}
                 <div className="mx-6 mt-6 flex items-center justify-center">
                   <img
-                    src="/3 phones Business.png"
+                    src="/images/3-phones-business.png"
                     alt="Citi Business Credit Journey - 3 Phone Mockups"
                     className="w-full max-w-full h-auto object-contain rounded-xl"
                   />
