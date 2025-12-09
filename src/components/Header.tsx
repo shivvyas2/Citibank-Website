@@ -49,7 +49,11 @@ export function Header() {
       <nav className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
+        <Link 
+          to="/" 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-3"
+        >
           <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }} 
@@ -67,6 +71,7 @@ export function Header() {
               <li key={item.href} className="relative">
                 <Link
                   to={item.href}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className="text-sm font-medium text-foreground/70 transition-colors duration-150 hover:text-foreground relative group"
                 >
                   {item.label}
@@ -105,7 +110,10 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   className="block py-3 text-foreground hover:text-primary transition-colors duration-150"
                 >
                   {item.label}
