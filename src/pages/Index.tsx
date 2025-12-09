@@ -5,6 +5,7 @@ import { CheckCircle2, Shield, Zap, TrendingUp, Database, Lock, GitBranch, Cloud
 import { PageLayout } from "@/components/PageLayout";
 import { Footer } from "@/components/Footer";
 import { Hero, BankComparison, StrategicBridge } from "@/components/sections/home";
+import { ImpactChatWidget } from "@/components/ImpactChatWidget";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -60,6 +61,27 @@ function Index() {
       <section className="py-24 relative bg-background">
         
         <div className="container mx-auto px-6 relative z-10">
+          {/* Section Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 max-w-5xl mx-auto"
+          >
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-tight mb-4">
+              Chase, Capital One, and Wells Fargo each built only one side of this stack.
+            </h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-tight mb-4">
+              Citi has neither side — which is why intent escapes.
+            </h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
+                LUMIQ AI built both sides, fully functional today — ready for Citi.
+              </span>
+            </h2>
+          </motion.div>
+
           {/* Two Cards Side by Side */}
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             
@@ -86,13 +108,13 @@ function Index() {
                   </p>
                 </div>
 
-                {/* Screenshot Placeholder */}
-                <div className="mx-6 mt-6 aspect-video bg-gradient-to-br from-secondary/10 to-primary/5 border-2 border-dashed border-secondary/30 rounded-xl flex flex-col items-center justify-center gap-3">
-                  <ImageIcon className="w-10 h-10 text-secondary/50" />
-                  <span className="text-sm text-secondary/70 text-center px-4">Insert Citi Consumer App Mockup Here</span>
-                  <div className="text-xs text-muted-foreground/60 text-center px-6 mt-2">
-                    Score wheel → Pre-approved offers → 1-tap Apply
-                  </div>
+                {/* Mockup Images - 3 Phones */}
+                <div className="mx-6 mt-6 flex items-center justify-center">
+                  <img
+                    src="/3 phone Consumer.png"
+                    alt="Citi Consumer Credit Journey - 3 Phone Mockups"
+                    className="w-full max-w-full h-auto object-contain rounded-xl"
+                  />
                 </div>
 
                 {/* Features */}
@@ -157,13 +179,13 @@ function Index() {
                   </p>
                 </div>
 
-                {/* Screenshot Placeholder */}
-                <div className="mx-6 mt-6 aspect-video bg-gradient-to-br from-primary/10 to-secondary/5 border-2 border-dashed border-primary/30 rounded-xl flex flex-col items-center justify-center gap-3">
-                  <ImageIcon className="w-10 h-10 text-primary/50" />
-                  <span className="text-sm text-primary/70 text-center px-4">Insert Citi Business App Mockup Here</span>
-                  <div className="text-xs text-muted-foreground/60 text-center px-6 mt-2">
-                    Owner Score + Business Score → Pre-approved → 1-tap Apply
-                  </div>
+                {/* Mockup Images - 3 Phones */}
+                <div className="mx-6 mt-6 flex items-center justify-center">
+                  <img
+                    src="/3 phones Business.png"
+                    alt="Citi Business Credit Journey - 3 Phone Mockups"
+                    className="w-full max-w-full h-auto object-contain rounded-xl"
+                  />
                 </div>
 
                 {/* Features */}
@@ -212,54 +234,40 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-16 mb-12"
+            className="mt-16 mb-16"
           >
-            <h3 className="text-center text-sm font-bold tracking-widest text-primary uppercase mb-8">What It Does</h3>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="p-6 rounded-xl bg-card/50 backdrop-blur border border-border/50 hover:border-primary/50 transition-all duration-300 text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">Find creditworthy applicants Citi currently declines</h4>
-                <p className="text-sm text-muted-foreground">Unlock hidden revenue from qualified customers slipping through the cracks.</p>
-              </div>
-              <div className="p-6 rounded-xl bg-card/50 backdrop-blur border border-border/50 hover:border-primary/50 transition-all duration-300 text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">Approve more, without increasing default risk</h4>
-                <p className="text-sm text-muted-foreground">Expand approvals confidently with risk-calibrated decisioning.</p>
-              </div>
-              <div className="p-6 rounded-xl bg-card/50 backdrop-blur border border-border/50 hover:border-primary/50 transition-all duration-300 text-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">Expand credit access compliantly and fairly</h4>
-                <p className="text-sm text-muted-foreground">Built for Reg B, ECOA, and SPCP alignment from day one.</p>
-              </div>
+            <h3 className="text-center text-2xl md:text-3xl font-heading font-bold text-foreground mb-12">What It Does</h3>
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <Card className="text-center hover:shadow-lg transition-all duration-300">
+                <CardContent className="pt-8 pb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+                    <Target className="w-8 h-8 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-bold text-foreground mb-3">Find creditworthy applicants Citi currently declines</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Unlock hidden revenue from qualified customers slipping through the cracks.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center hover:shadow-lg transition-all duration-300">
+                <CardContent className="pt-8 pb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+                    <Shield className="w-8 h-8 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-bold text-foreground mb-3">Approve more, without increasing default risk</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Expand approvals confidently with risk-calibrated decisioning.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center hover:shadow-lg transition-all duration-300">
+                <CardContent className="pt-8 pb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-8 h-8 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-bold text-foreground mb-3">Expand credit access compliantly and fairly</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Built for Reg B, ECOA, and SPCP alignment from day one.</p>
+                </CardContent>
+              </Card>
             </div>
           </motion.div>
 
-          {/* Differentiator Line */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-16 max-w-4xl mx-auto"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent h-px top-1/2" />
-              <p className="text-lg md:text-xl font-bold text-foreground bg-[#0a1628] px-8 inline-block relative">
-                Chase built one credit engine (consumer). Capital One built one (consumer). Wells built one (business).
-              </p>
-            </div>
-            <p className="text-2xl md:text-3xl font-bold mt-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary">
-                Citi becomes the first to deploy both.
-              </span>
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -271,17 +279,17 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="mb-12 text-center"
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              THE COMPETITIVE COST
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
+              The Competitive Cost
             </h3>
-            <p className="text-lg text-[#ADB7C4] max-w-3xl">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Citi is losing approvals, spend, and loyalty at the exact moment customers form credit intent. Competitors intercept Citi customers before they reach Citi's funnels.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Left Column - Competitor Diversion */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -289,25 +297,52 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-foreground font-semibold mb-4">Each month Citi's customers are diverted to:</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground"><span className="font-bold">Chase:</span> In-app prequals + 1-tap approvals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground"><span className="font-bold">Capital One:</span> CreditWise → funnel dominance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground"><span className="font-bold">Wells Fargo:</span> Close-Up → SMB activation</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground"><span className="font-bold">Apple Card / AmEx:</span> frictionless instant approvals</span>
-                </li>
-              </ul>
+              <Card className="h-full border-secondary/30">
+                <CardContent className="p-6 md:p-8">
+                  <div className="w-12 h-12 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-6">
+                    <AlertTriangle className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h4 className="text-xl font-bold text-foreground mb-6">Each month Citi's customers are diverted to:</h4>
+                  <ul className="space-y-4">
+                    <li className="flex items-center gap-3">
+                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
+                        <img src="/The Compet Cost/chase.svg" alt="Chase" className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-foreground font-semibold">Chase:</span>
+                        <span className="text-muted-foreground ml-2">In-app prequals + 1-tap approvals</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
+                        <img src="/The Compet Cost/Capital_One_logo.svg" alt="Capital One" className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-foreground font-semibold">Capital One:</span>
+                        <span className="text-muted-foreground ml-2">CreditWise → funnel dominance</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
+                        <img src="/The Compet Cost/wells-fargo.svg" alt="Wells Fargo" className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-foreground font-semibold">Wells Fargo:</span>
+                        <span className="text-muted-foreground ml-2">Close-Up → SMB activation</span>
+                      </div>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
+                        <img src="/The Compet Cost/Apple_Card.svg" alt="Apple Card" className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-foreground font-semibold">Apple Card:</span>
+                        <span className="text-muted-foreground ml-2">frictionless instant approvals</span>
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Right Column - Revenue Leakage Panel */}
@@ -317,25 +352,30 @@ function Index() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-lg">
-                <h4 className="text-xl font-bold text-foreground mb-6">
-                  Estimated Annual Revenue Leakage
-                </h4>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-baseline border-b border-border/30 pb-3">
-                    <span className="text-muted-foreground">Consumer:</span>
-                    <span className="text-2xl font-bold text-amber-400">$600M–$900M</span>
+              <Card className="h-full border-primary/30">
+                <CardContent className="p-6 md:p-8">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
+                    <DollarSign className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="flex justify-between items-baseline border-b border-border/30 pb-3">
-                    <span className="text-muted-foreground">Business:</span>
-                    <span className="text-2xl font-bold text-orange-500">$300M–$700M</span>
+                  <h4 className="text-xl font-bold text-foreground mb-6">
+                    Estimated Annual Revenue Leakage
+                  </h4>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-baseline border-b border-border pb-4">
+                      <span className="text-muted-foreground font-medium">Consumer:</span>
+                      <span className="text-2xl font-bold text-primary">$600M–$900M</span>
+                    </div>
+                    <div className="flex justify-between items-baseline border-b border-border pb-4">
+                      <span className="text-muted-foreground font-medium">Business:</span>
+                      <span className="text-2xl font-bold text-primary">$300M–$700M</span>
+                    </div>
+                    <div className="flex justify-between items-baseline pt-2">
+                      <span className="text-foreground font-bold text-lg">Total:</span>
+                      <span className="text-3xl font-bold text-primary">$900M–$1.6B lost annually</span>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-baseline pt-2">
-                    <span className="text-foreground font-semibold">Total:</span>
-                    <span className="text-3xl font-bold text-red-500">$900M–$1.6B lost annually</span>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
 
@@ -345,7 +385,7 @@ function Index() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-sm text-[#8993A1] mt-8"
+            className="text-sm text-muted-foreground mt-8 text-center"
           >
             Benchmarking: Credit Journey, CreditWise, Close-Up, applied to Citi TAM.
           </motion.p>
@@ -356,7 +396,7 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-end mt-8"
+            className="flex justify-center mt-10"
           >
             <Button variant="outline" className="group border-primary/50 hover:border-primary hover:bg-primary/10">
               View Full Competitive Analysis
@@ -374,45 +414,51 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="mb-12 text-center"
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              THE IMPACT: WHAT CITI GAINS
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
+              The Impact: What Citi Gains
             </h3>
-            <p className="text-lg text-[#ADB7C4] max-w-3xl">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Modeled on Chase Credit Journey, Capital One CreditWise, Wells Fargo Close-Up, and calibrated to Citi's TAM.
             </p>
           </motion.div>
 
           {/* 2x2 Impact Grid */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* Metric 1 - Consumer Lift */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
-              <h4 className="text-xl font-bold text-primary mb-4">Consumer Lift</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+12–24%</span> approval lift</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+25–40%</span> fewer manual reviews</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">2–3×</span> engagement</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+5–10%</span> card conversions</span>
-                </li>
-              </ul>
+              <Card className="h-full hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-6 md:p-8">
+                  <div className="w-12 h-12 rounded-2xl bg-success/10 border border-success/20 flex items-center justify-center mb-6">
+                    <TrendingUp className="w-6 h-6 text-success" />
+                  </div>
+                  <h4 className="text-xl font-bold text-foreground mb-6">Consumer Lift</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">+12–24%</span> approval lift</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">+25–40%</span> fewer manual reviews</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">2–3×</span> engagement</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">+5–10%</span> card conversions</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Metric 2 - Business Lift */}
@@ -421,27 +467,33 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
-              <h4 className="text-xl font-bold text-primary mb-4">Business Lift</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+18–30%</span> approval lift</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+35–50%</span> fewer manual reviews</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+5–12%</span> SMB conversions</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <TrendingUp className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+$300M–$700M</span> uplift</span>
-                </li>
-              </ul>
+              <Card className="h-full hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-6 md:p-8">
+                  <div className="w-12 h-12 rounded-2xl bg-success/10 border border-success/20 flex items-center justify-center mb-6">
+                    <TrendingUp className="w-6 h-6 text-success" />
+                  </div>
+                  <h4 className="text-xl font-bold text-foreground mb-6">Business Lift</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">+18–30%</span> approval lift</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">+35–50%</span> fewer manual reviews</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">+5–12%</span> SMB conversions</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-success"></div>
+                      <span className="text-foreground"><span className="font-semibold text-success">+$300M–$700M</span> uplift</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Metric 3 - Total Financial Impact */}
@@ -450,23 +502,29 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
-              <h4 className="text-xl font-bold text-primary mb-4">Total Financial Impact</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-foreground">
-                  <DollarSign className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">+$900M–$1.6B</span> annual uplift</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <DollarSign className="w-4 h-4 text-success" />
-                  <span><span className="font-semibold text-success">Zero CAC</span></span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <DollarSign className="w-4 h-4 text-success" />
-                  <span>First-mover advantage in credit intelligence</span>
-                </li>
-              </ul>
+              <Card className="h-full hover:shadow-lg transition-all duration-300 border-primary/30">
+                <CardContent className="p-6 md:p-8">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
+                    <DollarSign className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-bold text-foreground mb-6">Total Financial Impact</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="text-foreground"><span className="font-semibold text-primary">+$900M–$1.6B</span> annual uplift</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="text-foreground"><span className="font-semibold text-primary">Zero CAC</span></span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="text-foreground">First-mover advantage in credit intelligence</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Metric 4 - Development Savings */}
@@ -475,23 +533,29 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-card border border-border rounded-2xl p-6 shadow-sm"
             >
-              <h4 className="text-xl font-bold text-primary mb-4">Development Savings</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-foreground">
-                  <Clock className="w-4 h-4 text-success" />
-                  <span>Save <span className="font-semibold text-success">$40M–$70M</span> in build cost</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <Clock className="w-4 h-4 text-success" />
-                  <span>Save <span className="font-semibold text-success">18–24 months</span> of internal development</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <Zap className="w-4 h-4 text-primary" />
-                  <span>LumiqAI deploys in <span className="font-semibold text-primary">90 days</span></span>
-                </li>
-              </ul>
+              <Card className="h-full hover:shadow-lg transition-all duration-300 border-secondary/30">
+                <CardContent className="p-6 md:p-8">
+                  <div className="w-12 h-12 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-6">
+                    <Zap className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h4 className="text-xl font-bold text-foreground mb-6">Development Savings</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-secondary"></div>
+                      <span className="text-foreground">Save <span className="font-semibold text-secondary">$40M–$70M</span> in build cost</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-secondary"></div>
+                      <span className="text-foreground">Save <span className="font-semibold text-secondary">18–24 months</span> of internal development</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="text-foreground">LumiqAI deploys in <span className="font-semibold text-primary">90 days</span></span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
 
@@ -501,7 +565,7 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-end mt-12"
+            className="flex justify-center mt-12"
           >
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg group">
               Review Citi Pilot Plan
@@ -840,6 +904,7 @@ function Index() {
         </div>
       </section>
 
+      <ImpactChatWidget />
       <Footer />
     </PageLayout>
   );

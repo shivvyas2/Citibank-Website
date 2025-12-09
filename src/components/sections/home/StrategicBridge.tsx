@@ -51,6 +51,16 @@ export function StrategicBridge() {
                 </div>
                 <h3 className="text-lg font-bold text-foreground">Consumer customers need an in-app place to:</h3>
               </div>
+              
+              {/* Consumer Mockup Image */}
+              <div className="mb-6 flex items-center justify-center">
+                <img
+                  src="/What Citi Is Missing — And What We Built To Close It Overnight./consumers customers need an in.png"
+                  alt="Consumer customers need an in-app place"
+                  className="w-full h-auto rounded-xl"
+                />
+              </div>
+
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-muted-foreground">
                   <CheckCircle2 className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
@@ -89,6 +99,16 @@ export function StrategicBridge() {
                 </div>
                 <h3 className="text-lg font-bold text-foreground">Business customers need an in-app place to:</h3>
               </div>
+              
+              {/* Business Mockup Image */}
+              <div className="mb-6 flex items-center justify-center">
+                <img
+                  src="/What Citi Is Missing — And What We Built To Close It Overnight./business customers need an in.png"
+                  alt="Business customers need an in-app place"
+                  className="w-full h-auto rounded-xl"
+                />
+              </div>
+
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-muted-foreground">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -113,27 +133,6 @@ export function StrategicBridge() {
               </ul>
             </motion.div>
           </div>
-
-          {/* Concluding Paragraph */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-              Chase, Capital One, and Wells Fargo each built only one side of this stack.
-              <br />
-              <span className="text-warning font-semibold">Citi has neither side — which is why intent escapes.</span>
-            </p>
-            <p className="text-lg text-foreground font-semibold">
-              LUMIQ AI built both sides, fully functional today — ready for Citi.
-            </p>
-            <p className="text-base text-muted-foreground mt-4">
-              Below is the dual-system approach: <span className="text-secondary">Consumer Credit Journey</span> + <span className="text-primary">Business Credit Journey</span>
-            </p>
-          </motion.div>
         </motion.div>
       </div>
     </section>

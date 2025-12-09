@@ -15,7 +15,7 @@ export function Footer() {
     <footer className="bg-primary/10 text-foreground/70">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Column 1: About */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -50,40 +50,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Resources */}
-          <div>
-            <h3 className="mb-4 text-xl sm:text-2xl font-heading text-foreground">
-              Resources
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/revolution"
-                  className="text-sm font-medium text-foreground/60 transition-colors duration-150 hover:text-primary"
-                >
-                  The Revolution
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/impact"
-                  className="text-sm font-medium text-foreground/60 transition-colors duration-150 hover:text-primary"
-                >
-                  Impact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/uss"
-                  className="text-sm font-medium text-foreground/60 transition-colors duration-150 hover:text-primary"
-                >
-                  USS
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Contact */}
+          {/* Column 3: Contact */}
           <div>
             <h3 className="mb-4 text-xl sm:text-2xl font-heading text-foreground">
               Contact Us

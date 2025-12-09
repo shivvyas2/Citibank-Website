@@ -49,19 +49,19 @@ export function Header() {
       <nav className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <motion.div
+        <Link to="/" className="flex items-center gap-3">
+          <motion.div 
               initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
               transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-              className="h-10 w-10 grid place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary shadow-lg"
-              whileHover={{ scale: 1.05, rotate: 5 }}
-            >
+            className="h-10 w-10 grid place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary shadow-lg"
+            whileHover={{ scale: 1.05, rotate: 5 }}
+          >
               <Building2 className="h-5 w-5 text-primary-foreground" />
-            </motion.div>
+          </motion.div>
             <div className="font-heading text-xl font-bold tracking-tight text-foreground">
               LUMIQ AI × Citi
-            </div>
+          </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -73,8 +73,8 @@ export function Header() {
                   className="text-sm font-medium text-foreground/70 transition-colors duration-150 hover:text-foreground relative group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
-                </Link>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+          </Link>
               </li>
             ))}
           </ul>
@@ -112,18 +112,18 @@ export function Header() {
                   className="block py-3 text-foreground hover:text-primary transition-colors duration-150"
                 >
                   {item.label}
-                </Link>
+          </Link>
               </li>
             ))}
             <li className="pt-4">
               <Button asChild className="w-full rounded-full">
                 <Link to="/#cta" onClick={() => setIsMobileMenuOpen(false)}>
                   Book Review
-                </Link>
+          </Link>
               </Button>
             </li>
           </ul>
-        </div>
+      </div>
       )}
     </header>
   );
