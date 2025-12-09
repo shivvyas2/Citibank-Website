@@ -85,7 +85,7 @@ export function Header() {
               asChild
               className="hidden md:inline-flex rounded-full bg-foreground text-background hover:bg-foreground/90"
             >
-              <Link to="/#cta">Book Review</Link>
+              <Link to="/pilot#pilot-form">Book Review</Link>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -117,7 +117,7 @@ export function Header() {
             ))}
             <li className="pt-4">
               <Button asChild className="w-full rounded-full">
-                <Link to="/#cta" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/pilot#pilot-form" onClick={() => setIsMobileMenuOpen(false)}>
                   Book Review
           </Link>
               </Button>

@@ -368,112 +368,155 @@ export default function Pilot() {
               <div className="h-px w-24 bg-primary mx-auto" />
             </div>
 
-            {/* Progress Bar */}
-            <motion.div {...fadeInUp} className="mb-12">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="flex-1 h-3 rounded-full bg-muted relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 w-1/3 bg-primary" />
-                </div>
-                <div className="flex-1 h-3 rounded-full bg-muted relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 w-2/3 bg-primary" />
-                </div>
-                <div className="flex-1 h-3 rounded-full bg-muted relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 w-full bg-primary" />
-                </div>
+            {/* Timeline UI */}
+            <div className="relative max-w-[1600px] mx-auto">
+              {/* Timeline Line */}
+              <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-border"></div>
+
+              {/* Timeline Items */}
+              <div className="space-y-12">
+                {/* Phase 1 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="relative flex flex-col lg:flex-row gap-6 lg:gap-8 items-start"
+                >
+                  {/* Timeline Dot */}
+                  <div className="hidden lg:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                    <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                        <span className="text-primary-foreground font-bold text-sm">1</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="lg:ml-24 flex-1">
+                    <Card className="h-full border border-border bg-card shadow-sm">
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="lg:hidden w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">1</div>
+                          <div>
+                            <h3 className="font-bold text-foreground text-lg">Phase 1</h3>
+                            <p className="text-sm text-primary font-medium">Weeks 1–3</p>
+                          </div>
+                        </div>
+                        <h4 className="font-semibold text-foreground mb-4 text-base">Alignment & Integration</h4>
+                        <ul className="space-y-2">
+                          {[
+                            "Load Citi's product eligibility criteria",
+                            "Map bureau + cash-flow data to Citi rules",
+                            "SSO + API integration",
+                            "Security review & architecture approval",
+                            "Risk governance sign-off"
+                          ].map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </motion.div>
+
+                {/* Phase 2 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="relative flex flex-col lg:flex-row gap-6 lg:gap-8 items-start"
+                >
+                  {/* Timeline Dot */}
+                  <div className="hidden lg:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                    <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                        <span className="text-primary-foreground font-bold text-sm">2</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="lg:ml-24 flex-1">
+                    <Card className="h-full border border-border bg-card shadow-sm">
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="lg:hidden w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">2</div>
+                          <div>
+                            <h3 className="font-bold text-foreground text-lg">Phase 2</h3>
+                            <p className="text-sm text-primary font-medium">Weeks 4–7</p>
+                          </div>
+                        </div>
+                        <h4 className="font-semibold text-foreground mb-4 text-base">Experience Layer & AI Eligibility</h4>
+                        <ul className="space-y-2">
+                          {[
+                            "Build consumer & SMB journeys in-app",
+                            "Enable eligibility engine using Citi's published criteria",
+                            "Deploy confidence bands based on Citi thresholds",
+                            "Build decline-recovery flows"
+                          ].map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </motion.div>
+
+                {/* Phase 3 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="relative flex flex-col lg:flex-row gap-6 lg:gap-8 items-start"
+                >
+                  {/* Timeline Dot */}
+                  <div className="hidden lg:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                    <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                        <span className="text-primary-foreground font-bold text-sm">3</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="lg:ml-24 flex-1">
+                    <Card className="h-full border border-border bg-card shadow-sm">
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="lg:hidden w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">3</div>
+                          <div>
+                            <h3 className="font-bold text-foreground text-lg">Phase 3</h3>
+                            <p className="text-sm text-primary font-medium">Weeks 8–12</p>
+                          </div>
+                        </div>
+                        <h4 className="font-semibold text-foreground mb-4 text-base">Controlled Live Pilot</h4>
+                        <ul className="space-y-2">
+                          {[
+                            "Go-live for limited consumer + SMB cohorts",
+                            "Capture uplift data",
+                            "Weekly performance dashboards",
+                            "Pilot evaluation report for executive leadership"
+                          ].map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </motion.div>
               </div>
-              <div className="flex justify-between text-xs text-muted-foreground">
-                <span>Week 1</span>
-                <span>Week 4</span>
-                <span>Week 8</span>
-                <span>Week 12</span>
-              </div>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                <Card className="h-full border-t-4 border-t-primary bg-card">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">1</div>
-                      <div>
-                        <h3 className="font-bold text-foreground">Phase 1</h3>
-                        <p className="text-xs text-primary">Weeks 1–3</p>
-                      </div>
-                    </div>
-                    <h4 className="font-semibold text-foreground mb-3">Alignment & Integration</h4>
-                    <ul className="space-y-2">
-                      {[
-                        "Load Citi's product eligibility criteria",
-                        "Map bureau + cash-flow data to Citi rules",
-                        "SSO + API integration",
-                        "Security review & architecture approval",
-                        "Risk governance sign-off"
-                      ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-                <Card className="h-full border-t-4 border-t-primary bg-card">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">2</div>
-                      <div>
-                        <h3 className="font-bold text-foreground">Phase 2</h3>
-                        <p className="text-xs text-primary">Weeks 4–7</p>
-                      </div>
-                    </div>
-                    <h4 className="font-semibold text-foreground mb-3">Experience Layer & AI Eligibility</h4>
-                    <ul className="space-y-2">
-                      {[
-                        "Build consumer & SMB journeys in-app",
-                        "Enable eligibility engine using Citi's published criteria",
-                        "Deploy confidence bands based on Citi thresholds",
-                        "Build decline-recovery flows"
-                      ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
-                <Card className="h-full border-t-4 border-t-primary bg-card">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">3</div>
-                      <div>
-                        <h3 className="font-bold text-foreground">Phase 3</h3>
-                        <p className="text-xs text-primary">Weeks 8–12</p>
-                      </div>
-                    </div>
-                    <h4 className="font-semibold text-foreground mb-3">Controlled Live Pilot</h4>
-                    <ul className="space-y-2">
-                      {[
-                        "Go-live for limited consumer + SMB cohorts",
-                        "Capture uplift data",
-                        "Weekly performance dashboards",
-                        "Pilot evaluation report for executive leadership"
-                      ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
             </div>
 
             <motion.div {...fadeInUp} className="grid sm:grid-cols-2 gap-4">

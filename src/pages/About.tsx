@@ -466,7 +466,7 @@ function About() {
             </p>
             
             <Button size="lg" className="bg-white hover:bg-white/90 text-primary font-bold text-xl px-12 py-8 h-auto shadow-xl" asChild>
-              <Link to="/#cta">
+              <Link to="/pilot#pilot-form">
                 Get in Touch
                 <ArrowRight className="ml-3 w-6 h-6" strokeWidth={2.5} />
               </Link>

@@ -6,32 +6,32 @@ import { Button } from "@/components/ui/button";
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 md:pt-28 lg:pt-32 bg-gradient-to-b from-primary/10 to-background">
-      <div className="container mx-auto">
-        <div className="space-y-8 text-center">
+      <div className="container mx-auto px-6">
+        <div className="space-y-8 text-center max-w-[1600px] mx-auto">
           <div className="space-y-4">
             {/* Heading */}
-            <h1 className="mx-auto max-w-4xl text-5xl md:text-7xl lg:text-8xl font-heading leading-tight tracking-tight text-foreground">
+            <h1 className="mx-auto max-w-5xl text-5xl md:text-7xl lg:text-8xl font-heading leading-tight tracking-tight text-foreground">
               Citi is the only top-4 bank{" "}
               <span className="text-primary">without</span> a built-in credit intelligence layer.
             </h1>
 
             {/* Description */}
-            <p className="mx-auto max-w-2xl text-lg font-body text-foreground/70">
+            <p className="mx-auto max-w-3xl text-lg font-body text-foreground/70">
               Unlock 15–20% more approvals from declined applications — without elevating risk.
               Built to align with Reg B (ECOA) and SPCP frameworks.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/how-it-works">
-              <Button size="lg" variant="default" className="gap-2">
+              <Button size="lg" variant="default" className="gap-2 px-8 py-6 text-lg font-semibold">
                 See how it works in 90 seconds
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/pilot">
-              <Button size="lg" variant="outline" className="gap-2">
+            <Link to="/pilot#pilot-form">
+              <Button size="lg" variant="outline" className="gap-2 px-8 py-6 text-lg font-semibold">
                 Explore pilot for Q1 2026
               </Button>
             </Link>
@@ -41,7 +41,7 @@ export function Hero() {
       
       {/* Strategic Gap Content - Left Text Block Only */}
       <div className="container mx-auto px-6 mt-16 md:mt-24">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-[1600px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

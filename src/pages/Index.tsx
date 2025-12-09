@@ -67,7 +67,7 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16 max-w-7xl mx-auto"
+            className="text-center mb-16 max-w-[1600px] mx-auto"
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-tight mb-4">
               Chase, Capital One, and Wells Fargo each built only one side of this stack.
@@ -83,7 +83,7 @@ function Index() {
           </motion.div>
 
           {/* Two Cards Side by Side */}
-          <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-[1600px] mx-auto">
             
             {/* Left Card - Consumer */}
             <motion.div
@@ -237,7 +237,7 @@ function Index() {
             className="mt-16 mb-16"
           >
             <h3 className="text-center text-2xl md:text-3xl font-heading font-bold text-foreground mb-12">What It Does</h3>
-            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
               <Card className="text-center hover:shadow-lg transition-all duration-300">
                 <CardContent className="pt-8 pb-8">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
@@ -289,7 +289,7 @@ function Index() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-[1600px] mx-auto">
             {/* Left Column - Competitor Diversion */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -398,9 +398,9 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex justify-center mt-10"
           >
-            <Button variant="outline" className="group border-primary/50 hover:border-primary hover:bg-primary/10">
+            <Button size="lg" variant="outline" className="group border-primary/50 hover:border-primary hover:bg-primary/10 px-8 py-6 text-lg font-semibold">
               View Full Competitive Analysis
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
         </div>
@@ -425,7 +425,7 @@ function Index() {
           </motion.div>
 
           {/* 2x2 Impact Grid */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-[1600px] mx-auto">
             {/* Metric 1 - Consumer Lift */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -567,9 +567,9 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex justify-center mt-12"
           >
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg group">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-7 text-xl group">
               Review Citi Pilot Plan
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
 
@@ -607,7 +607,7 @@ function Index() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-[1600px] mx-auto">
             {[
               {
                 step: 1,
@@ -658,241 +658,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Who It's For */}
-      <section className="py-20 relative bg-card/10">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">For Product & Risk Leaders</h2>
-            <p className="text-muted-foreground">Built for decision-makers who drive portfolio growth and manage risk</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {[
-              { icon: Briefcase, title: "SMB Card Portfolio Owners", description: "Drive card adoption and spend" },
-              { icon: LineChartIcon, title: "Digital Banking / Platform Heads", description: "Embed credit intelligence into channels" },
-              { icon: UserCheck, title: "Credit Policy / Underwriting Ops", description: "Maintain model-risk controls" },
-              { icon: Target, title: "Lending Product Leads", description: "Expand to LOC, term loans (Stage 2)" }
-            ].map((role, index) => (
-              <motion.div
-                key={role.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/30 transition-all duration-300 text-center">
-                  <CardContent className="pt-8 pb-8">
-                    <role.icon className="w-10 h-10 text-primary mx-auto mb-4" />
-                    <h3 className="text-base font-bold mb-2">{role.title}</h3>
-                    <p className="text-sm text-muted-foreground">{role.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Value & Outcomes */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Value & Outcomes</h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: TrendingUp,
-                title: "Revenue",
-                description: "More right-fit customers; higher spend and utilization.",
-                color: "text-success"
-              },
-              {
-                icon: Shield,
-                title: "Risk",
-                description: "Consistent underwriting inputs; explainable decisions; portfolio governance.",
-                color: "text-primary"
-              },
-              {
-                icon: Zap,
-                title: "Ops",
-                description: "Fewer manual reviews; faster decisions; lower cost per booked account.",
-                color: "text-secondary"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="pt-8 pb-8 text-center">
-                    <item.icon className={`w-12 h-12 ${item.color} mx-auto mb-4`} />
-                    <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Security & Compliance */}
-      <section className="py-24 relative bg-background-secondary">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Security & Compliance</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Bank-grade security and regulatory compliance built in
-            </p>
-            <p className="text-base text-primary/80 max-w-3xl mx-auto mt-4 font-medium">
-              SPCP and Fair Lending alignment built into design — compliant credit expansion, not relaxed underwriting.
-            </p>
-          </motion.div>
-
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: Lock,
-                title: "Security Controls",
-                items: ["SOC 2–aligned controls", "Encryption in transit & at rest", "RBAC & SSO"]
-              },
-              {
-                icon: FileCheck,
-                title: "Data Governance",
-                items: ["Data-lineage tracking", "Decision snapshots", "Retention policy"]
-              },
-              {
-                icon: Shield,
-                title: "Regulatory Design",
-                items: ["ECOA / FCRA / GLBA / UDAP / CRA", "Model-risk governance ready", "Adverse-action tracking"]
-              },
-              {
-                icon: CheckCircle2,
-                title: "Audit Trail",
-                items: ["100% coverage", "Inputs, transformations, outputs", "Real-time monitoring"]
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-card border border-border shadow-sm">
-                  <CardContent className="pt-6 pb-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <item.icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                        <ul className="space-y-2">
-                          {item.items.map((listItem) => (
-                            <li key={listItem} className="flex items-start gap-2 text-muted-foreground text-sm">
-                              <CheckCircle2 className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
-                              <span>{listItem}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Integration</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Flexible deployment options that work with your existing infrastructure
-            </p>
-          </motion.div>
-
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: GitBranch,
-                title: "APIs & SDKs",
-                description: "APIs & SDKs with sandbox; batch or real-time options"
-              },
-              {
-                icon: Zap,
-                title: "Non-Disruptive",
-                description: "Non-disruptive pilot; integrates alongside your existing stack"
-              },
-              {
-                icon: CloudCog,
-                title: "Deployment",
-                description: "Deployable in bank cloud/VPC or vendor-hosted with private connectivity"
-              },
-              {
-                icon: Shield,
-                title: "SLAs",
-                description: "SLAs: uptime, RTO/RPO, incident response"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="pt-8 pb-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <item.icon className="w-7 h-7 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section id="cta" className="py-32 relative scroll-mt-20 bg-primary/5">
         <div className="container mx-auto px-6 relative z-10">
@@ -901,7 +666,7 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-7xl mx-auto text-center"
+            className="max-w-[1600px] mx-auto text-center"
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Start a 6-Week Pilot with Pre-Agreed Success Criteria
@@ -909,9 +674,11 @@ function Index() {
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Non-disruptive integration. Measurable results. Built on proven principles.
             </p>
-            <Button size="lg" className="gap-2">
-              Book a 20-minute pilot review — see conversion lift & model audit in action
-              <ArrowRight className="w-5 h-5" />
+            <Button size="lg" className="gap-2 px-10 py-7 text-xl font-semibold" asChild>
+              <Link to="/pilot#pilot-form">
+                Book a 20-minute pilot review — see conversion lift & model audit in action
+                <ArrowRight className="w-6 h-6" />
+              </Link>
             </Button>
           </motion.div>
         </div>
