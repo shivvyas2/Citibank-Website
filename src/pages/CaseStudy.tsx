@@ -314,7 +314,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Business</p>
                               <img 
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Business.png" 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Business.PNG" 
                                 alt="Competitor Prequal Business"
                                 className="w-full h-auto rounded-lg max-w-xs mx-auto"
                               />

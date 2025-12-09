@@ -41,7 +41,7 @@ const competitorData = [
   { bank: "Capital One", logo: "/The Compet Cost/Capital_One_logo.svg", consumer: "CreditWise", business: false, prequal: true, pathways: true },
   { bank: "Wells Fargo", logo: "/The Compet Cost/wells-fargo.svg", consumer: "Close Up", business: false, prequal: true, pathways: true },
   { bank: "AmEx", logo: "/The Compet Cost/amex-3.svg", consumer: "Internal scoring", business: "Business logic only", prequal: true, pathways: true },
-  { bank: "Citi", logo: "/citi-2.svg", consumer: false, business: false, prequal: false, pathways: false }
+  { bank: "Citi", logo: "/citibank-5.svg", consumer: false, business: false, prequal: false, pathways: false }
 ];
 
 export default function Pilot() {
