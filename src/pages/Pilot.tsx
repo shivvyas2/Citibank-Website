@@ -84,8 +84,11 @@ export default function Pilot() {
                 size="lg" 
                 variant="outline"
                 className="border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/20 hover:border-primary-foreground hover:text-primary-foreground rounded-full font-semibold shadow-md transition-all"
+                asChild
               >
-                Request Technical Architecture
+                <a href="/Citi Model Governance Framework.pdf" download="Citi Model Governance Framework.pdf">
+                  Download Model Governance Framework
+                </a>
               </Button>
             </div>
           </motion.div>

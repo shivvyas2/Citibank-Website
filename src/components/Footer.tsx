@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building2, Mail, Phone, MapPin } from "lucide-react";
+import { Building2, Mail } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -62,18 +62,11 @@ export function Footer() {
                   className="mt-0.5 shrink-0"
                 />
                 <a
-                  href="mailto:contact@lumiqai.com"
+                  href="mailto:support@futeurcredx.com"
                   className="hover:text-primary transition-colors duration-150"
                 >
-                  contact@lumiqai.com
+                  support@futeurcredx.com
                 </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone
-                  size={16}
-                  className="shrink-0"
-                />
-                <span>Schedule a Demo</span>
               </li>
             </ul>
           </div>
