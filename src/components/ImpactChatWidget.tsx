@@ -71,27 +71,27 @@ export function ImpactChatWidget() {
                 <Card>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center">
-                        <TrendingUp className="w-5 h-5 text-success" />
+                      <div className="w-10 h-10 rounded-xl bg-foreground/10 border border-foreground/20 flex items-center justify-center">
+                        <TrendingUp className="w-5 h-5 text-foreground" />
                       </div>
                       <h4 className="font-bold text-foreground">Consumer Lift</h4>
                     </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">+12–24%</span> approval lift</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+12–24%</span> approval lift</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">+25–40%</span> fewer manual reviews</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+25–40%</span> fewer manual reviews</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">2–3×</span> engagement</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">2–3×</span> engagement</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">+5–10%</span> card conversions</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+5–10%</span> card conversions</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -101,52 +101,52 @@ export function ImpactChatWidget() {
                 <Card>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center">
-                        <TrendingUp className="w-5 h-5 text-success" />
+                      <div className="w-10 h-10 rounded-xl bg-foreground/10 border border-foreground/20 flex items-center justify-center">
+                        <TrendingUp className="w-5 h-5 text-foreground" />
                       </div>
                       <h4 className="font-bold text-foreground">Business Lift</h4>
                     </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">+18–30%</span> approval lift</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+18–30%</span> approval lift</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">+35–50%</span> fewer manual reviews</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+35–50%</span> fewer manual reviews</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">+5–12%</span> SMB conversions</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+5–12%</span> SMB conversions</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                        <span><span className="font-semibold text-success">+$300M–$700M</span> uplift</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+$300M–$700M</span> uplift</span>
                       </li>
                     </ul>
                   </CardContent>
                 </Card>
 
                 {/* Total Financial Impact */}
-                <Card className="border-primary/30">
+                <Card className="border-border">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <DollarSign className="w-5 h-5 text-primary" />
+                      <div className="w-10 h-10 rounded-xl bg-foreground/10 border border-foreground/20 flex items-center justify-center">
+                        <DollarSign className="w-5 h-5 text-foreground" />
                       </div>
                       <h4 className="font-bold text-foreground">Total Financial Impact</h4>
                     </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span><span className="font-semibold text-primary">+$900M–$1.6B</span> annual uplift</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">+$900M–$1.6B</span> annual uplift</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span><span className="font-semibold text-primary">Zero CAC</span></span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span><span className="font-bold text-foreground">Zero CAC</span></span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
                         <span>First-mover advantage in credit intelligence</span>
                       </li>
                     </ul>
@@ -154,26 +154,26 @@ export function ImpactChatWidget() {
                 </Card>
 
                 {/* Development Savings */}
-                <Card className="border-secondary/30">
+                <Card className="border-border">
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center">
-                        <Zap className="w-5 h-5 text-secondary" />
+                      <div className="w-10 h-10 rounded-xl bg-foreground/10 border border-foreground/20 flex items-center justify-center">
+                        <Zap className="w-5 h-5 text-foreground" />
                       </div>
                       <h4 className="font-bold text-foreground">Development Savings</h4>
                     </div>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                        <span>Save <span className="font-semibold text-secondary">$40M–$70M</span> in build cost</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span>Save <span className="font-bold text-foreground">$40M–$70M</span> in build cost</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                        <span>Save <span className="font-semibold text-secondary">18–24 months</span> of internal development</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span>Save <span className="font-bold text-foreground">18–24 months</span> of internal development</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span>LumiqAI deploys in <span className="font-semibold text-primary">90 days</span></span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
+                        <span>LumiqAI deploys in <span className="font-bold text-foreground">90 days</span></span>
                       </li>
                     </ul>
                   </CardContent>

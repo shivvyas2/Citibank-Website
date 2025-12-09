@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, animate, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,6 +12,30 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ImpactChatWidget } from "@/components/ImpactChatWidget";
 import { Footer } from "@/components/Footer";
+
+// Animated Counter Component for numeric values
+const AnimatedCounter = ({ num, suffix = "", decimals = 0 }: { 
+  num: number; 
+  suffix?: string; 
+  decimals?: number;
+}) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!isInView || !ref.current) return;
+
+    animate(0, num, {
+      duration: 2.5,
+      onUpdate(value) {
+        if (!ref.current) return;
+        ref.current.textContent = value.toFixed(decimals);
+      },
+    });
+  }, [num, decimals, isInView]);
+
+  return <span ref={ref}>0</span>;
+};
 
 export default function HowItWorks() {
   const fadeInUp = {
@@ -27,7 +52,7 @@ export default function HowItWorks() {
         {/* SECTION 1 — OVERVIEW (Hero) */}
         <section id="overview" className="relative overflow-hidden pt-8 md:pt-12 lg:pt-16 pb-20 md:pb-24 lg:pb-32 bg-gradient-to-b from-primary/10 to-background">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-7xl mx-auto">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Text Content - Left Side */}
                 <div className="order-2 lg:order-1">
@@ -89,7 +114,7 @@ export default function HowItWorks() {
         {/* SECTION 2 — HOW CITI USERS EXPERIENCE THE SYSTEM */}
         <section id="user-experience" className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-7xl mx-auto">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
                   USER EXPERIENCE
@@ -113,7 +138,7 @@ export default function HowItWorks() {
                       <span className="text-sm font-semibold text-primary uppercase tracking-wide">Consumer View</span>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-0">
+                  <div className="grid grid-cols-2 gap-4">
                     <img
                       src="/How it works/How citi users experience/Consumer/1.png"
                       alt="Consumer Citi App Experience 1"
@@ -135,7 +160,7 @@ export default function HowItWorks() {
                       <span className="text-sm font-semibold text-secondary uppercase tracking-wide">Business View</span>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-0">
+                  <div className="grid grid-cols-2 gap-4">
                     <img
                       src="/How it works/How citi users experience/Business/1.png"
                       alt="Business Citi App Experience 1"
@@ -228,7 +253,7 @@ export default function HowItWorks() {
         {/* SECTION 3 — WHAT THE USER SEES */}
         <section id="what-users-see" className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-7xl mx-auto">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
                   USER INTERFACE
@@ -252,7 +277,7 @@ export default function HowItWorks() {
                   </div>
                   
                   <div className="mb-6 overflow-hidden">
-                    <div className="grid grid-cols-2 gap-0">
+                    <div className="grid grid-cols-2 gap-4">
                       <img
                         src="/How it works/what users see/consumer/1.png"
                         alt="Consumer View 1"
@@ -292,7 +317,7 @@ export default function HowItWorks() {
                   </div>
                   
                   <div className="mb-6 overflow-hidden">
-                    <div className="grid grid-cols-2 gap-0">
+                    <div className="grid grid-cols-2 gap-4">
                       <img
                         src="/How it works/what users see/business/1.png"
                         alt="Business View 1"
@@ -329,26 +354,26 @@ export default function HowItWorks() {
         {/* LumiqAI installs Citi's missing credit intelligence layer */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-7xl mx-auto mb-16">
-              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div className="overflow-hidden">
-                  <div className="p-6 bg-secondary/10 mb-4">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto mb-16">
+              <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div className="overflow-hidden flex flex-col items-center">
+                  <div className="p-6 bg-secondary/10 mb-4 w-full">
                     <h4 className="text-lg font-semibold text-foreground">Consumer</h4>
                   </div>
                   <img
                     src="/How it works/LumiqAI installs Citi's missing credit intelligence layer/Citi Consumer LUMIQ.png"
                     alt="Citi Consumer LUMIQ"
-                    className="w-full h-auto"
+                    className="w-full h-auto max-w-xs"
                   />
                 </div>
-                <div className="overflow-hidden">
-                  <div className="p-6 bg-primary/10 mb-4">
+                <div className="overflow-hidden flex flex-col items-center">
+                  <div className="p-6 bg-primary/10 mb-4 w-full">
                     <h4 className="text-lg font-semibold text-foreground">Business</h4>
                   </div>
                   <img
                     src="/How it works/LumiqAI installs Citi's missing credit intelligence layer/Citi Business LUMIQ.png"
                     alt="Citi Business LUMIQ"
-                    className="w-full h-auto"
+                    className="w-full h-auto max-w-xs"
                   />
                 </div>
               </div>
@@ -372,103 +397,222 @@ export default function HowItWorks() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-                {/* 1. Prequalification */}
-                <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                  <CardContent className="p-6 md:p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
-                        <Target className="w-6 h-6 text-foreground" />
-                      </div>
-                      <h3 className="text-xl font-heading font-bold">1. Prequalification</h3>
-                    </div>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      Soft-pull evaluation mapped to Citi's own pre-qual criteria.
-                    </p>
-                    <a href="https://www.citi.com/credit-cards/understanding-credit-cards/what-credit-card-do-i-qualify-for" 
-                       target="_blank" rel="noopener noreferrer"
-                       className="text-xs text-primary hover:underline flex items-center gap-1">
-                      Reference: Citi qualification criteria →
-                    </a>
-                  </CardContent>
-                </Card>
+              {/* Timeline UI */}
+              <div className="relative max-w-6xl mx-auto">
+                {/* Timeline Line */}
+                <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-border"></div>
 
-                {/* 2. Eligibility Confidence Bands */}
-                <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                  <CardContent className="p-6 md:p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
-                        <BarChart3 className="w-6 h-6 text-foreground" />
+                {/* Timeline Items */}
+                <div className="space-y-12">
+                  {/* Step 1: Prequalification */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-foreground flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">1</span>
+                        </div>
                       </div>
-                      <h3 className="text-xl font-heading font-bold">2. Eligibility Confidence Bands</h3>
                     </div>
-                    <p className="text-muted-foreground mb-3 leading-relaxed">
-                      AI assigns a Citi-policy-aligned confidence score:
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <Badge className="bg-foreground/10 text-foreground border-foreground/30">Very Likely</Badge>
-                      <Badge className="bg-foreground/10 text-foreground border-foreground/30">Likely</Badge>
-                      <Badge className="bg-foreground/10 text-foreground border-foreground/30">Borderline</Badge>
-                      <Badge className="bg-foreground/10 text-foreground border-foreground/30">High Decline Risk</Badge>
+                    
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8 text-center">
+                          <div className="flex items-center justify-center gap-3 mb-4">
+                            <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center md:hidden">
+                              <Target className="w-6 h-6 text-foreground" />
+                            </div>
+                            <h3 className="text-xl font-heading font-bold">1. Prequalification</h3>
+                          </div>
+                          <p className="text-muted-foreground mb-4 leading-relaxed max-w-2xl mx-auto">
+                            Soft-pull evaluation mapped to Citi's own pre-qual criteria.
+                          </p>
+                          {/* Consumer Mockup */}
+                          <div className="mb-4 max-w-xs mx-auto">
+                            <img
+                              src="/How it works/what users see/consumer/1.png"
+                              alt="Consumer Prequalification View"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </div>
+                          <a href="https://www.citi.com/credit-cards/understanding-credit-cards/what-credit-card-do-i-qualify-for" 
+                             target="_blank" rel="noopener noreferrer"
+                             className="text-xs text-primary hover:underline flex items-center justify-center gap-1">
+                            Reference: Citi qualification criteria →
+                          </a>
+                        </CardContent>
+                      </Card>
                     </div>
-                    <p className="text-xs text-muted-foreground/80 italic">
-                      No new rules introduced — mirrors what Citi underwriters already evaluate.
-                    </p>
-                  </CardContent>
-                </Card>
+                  </motion.div>
 
-                {/* 3. Multi-Product Mapping */}
-                <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                  <CardContent className="p-6 md:p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
-                        <CreditCard className="w-6 h-6 text-foreground" />
+                  {/* Step 2: Eligibility Confidence Bands */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-foreground flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">2</span>
+                        </div>
                       </div>
-                      <h3 className="text-xl font-heading font-bold">3. Multi-Product Mapping</h3>
                     </div>
-                    <p className="text-muted-foreground mb-3 leading-relaxed">
-                      Engine tests user attributes against every Citi card's rules:
-                    </p>
-                    <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                      <span>• Score thresholds</span>
-                      <span>• Credit age</span>
-                      <span>• Inquiry recency</span>
-                      <span>• Payment history</span>
-                      <span>• Utilization windows</span>
-                      <span>• Income/DTI</span>
-                      <span className="col-span-2">• 48-month bonus cycle considerations</span>
+                    
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8 text-center">
+                          <div className="flex items-center justify-center gap-3 mb-4">
+                            <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center md:hidden">
+                              <BarChart3 className="w-6 h-6 text-foreground" />
+                            </div>
+                            <h3 className="text-xl font-heading font-bold">2. Eligibility Confidence Bands</h3>
+                          </div>
+                          <p className="text-muted-foreground mb-3 leading-relaxed max-w-2xl mx-auto">
+                            AI assigns a Citi-policy-aligned confidence score:
+                          </p>
+                          <div className="flex flex-wrap gap-2 mb-3 justify-center">
+                            <Badge className="bg-foreground/10 text-foreground border-foreground/30">Very Likely</Badge>
+                            <Badge className="bg-foreground/10 text-foreground border-foreground/30">Likely</Badge>
+                            <Badge className="bg-foreground/10 text-foreground border-foreground/30">Borderline</Badge>
+                            <Badge className="bg-foreground/10 text-foreground border-foreground/30">High Decline Risk</Badge>
+                          </div>
+                          {/* Business Mockup */}
+                          <div className="mb-3 max-w-xs mx-auto">
+                            <img
+                              src="/How it works/what users see/business/1.png"
+                              alt="Business Eligibility View"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </div>
+                          <p className="text-xs text-muted-foreground/80 italic max-w-2xl mx-auto">
+                            No new rules introduced — mirrors what Citi underwriters already evaluate.
+                          </p>
+                        </CardContent>
+                      </Card>
                     </div>
-                  </CardContent>
-                </Card>
+                  </motion.div>
 
-                {/* 4. Decline-Recovery Logic */}
-                <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                  <CardContent className="p-6 md:p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
-                        <RefreshCw className="w-6 h-6 text-foreground" />
+                  {/* Step 3: Multi-Product Mapping */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-foreground flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">3</span>
+                        </div>
                       </div>
-                      <h3 className="text-xl font-heading font-bold">4. Decline-Recovery Logic</h3>
                     </div>
-                    <p className="text-muted-foreground mb-3 leading-relaxed">
-                      If a user cannot be approved today, LumiqAI automatically generates:
-                    </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex items-start gap-2">
-                        <ChevronRight className="w-4 h-4 text-foreground shrink-0 mt-0.5" />
-                        <span>Reason Codes based on Citi criteria</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <ChevronRight className="w-4 h-4 text-foreground shrink-0 mt-0.5" />
-                        <span>Steps to Achieve Approval</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <ChevronRight className="w-4 h-4 text-foreground shrink-0 mt-0.5" />
-                        <span>Smart Re-Apply when conditions improve</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                    
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8 text-center">
+                          <div className="flex items-center justify-center gap-3 mb-4">
+                            <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center md:hidden">
+                              <CreditCard className="w-6 h-6 text-foreground" />
+                            </div>
+                            <h3 className="text-xl font-heading font-bold">3. Multi-Product Mapping</h3>
+                          </div>
+                          <p className="text-muted-foreground mb-3 leading-relaxed max-w-2xl mx-auto">
+                            Engine tests user attributes against every Citi card's rules:
+                          </p>
+                          {/* Consumer Mockup showing multiple products */}
+                          <div className="mb-3 max-w-xs mx-auto">
+                            <img
+                              src="/How it works/what users see/consumer/2.png"
+                              alt="Multi-Product Mapping View"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </div>
+                          <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground max-w-md mx-auto">
+                            <span>• Score thresholds</span>
+                            <span>• Credit age</span>
+                            <span>• Inquiry recency</span>
+                            <span>• Payment history</span>
+                            <span>• Utilization windows</span>
+                            <span>• Income/DTI</span>
+                            <span className="col-span-2">• 48-month bonus cycle considerations</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </motion.div>
+
+                  {/* Step 4: Decline-Recovery Logic */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-foreground flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">4</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8 text-center">
+                          <div className="flex items-center justify-center gap-3 mb-4">
+                            <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center md:hidden">
+                              <RefreshCw className="w-6 h-6 text-foreground" />
+                            </div>
+                            <h3 className="text-xl font-heading font-bold">4. Decline-Recovery Logic</h3>
+                          </div>
+                          <p className="text-muted-foreground mb-3 leading-relaxed max-w-2xl mx-auto">
+                            If a user cannot be approved today, LumiqAI automatically generates:
+                          </p>
+                          {/* Business Mockup showing recovery flow */}
+                          <div className="mb-3 max-w-xs mx-auto">
+                            <img
+                              src="/How it works/what users see/business/2.png"
+                              alt="Decline Recovery View"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </div>
+                          <ul className="space-y-2 text-sm text-muted-foreground max-w-md mx-auto">
+                            <li className="flex items-center justify-center gap-2">
+                              <ChevronRight className="w-4 h-4 text-foreground shrink-0" />
+                              <span>Reason Codes based on Citi criteria</span>
+                            </li>
+                            <li className="flex items-center justify-center gap-2">
+                              <ChevronRight className="w-4 h-4 text-foreground shrink-0" />
+                              <span>Steps to Achieve Approval</span>
+                            </li>
+                            <li className="flex items-center justify-center gap-2">
+                              <ChevronRight className="w-4 h-4 text-foreground shrink-0" />
+                              <span>Smart Re-Apply when conditions improve</span>
+                            </li>
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
 
               {/* Compliance Alignment Statement */}
@@ -485,7 +629,7 @@ export default function HowItWorks() {
         {/* SECTION 5 — IMPACT ON CITI'S ECOSYSTEM */}
         <section id="impact" className="py-20 md:py-24 lg:py-32 bg-gradient-to-b from-primary/10 to-background">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-7xl mx-auto">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
                   IMPACT
@@ -500,7 +644,7 @@ export default function HowItWorks() {
 
               {/* What Citi Gains */}
               <div className="mb-12">
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-primary mb-8 text-center">What Citi Gains</h3>
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-8 text-center">What Citi Gains</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
                   {[
                     { value: "+12–24%", label: "Approval Lift (Consumer)", icon: TrendingUp },
@@ -514,7 +658,7 @@ export default function HowItWorks() {
                   ].map((item, idx) => (
                     <Card key={idx} className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                       <CardContent className="p-6 text-center">
-                        <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                        <item.icon className="w-8 h-8 text-foreground mx-auto mb-3" />
                         <div className="text-2xl md:text-3xl font-bold text-foreground mb-2">{item.value}</div>
                         <p className="text-xs text-muted-foreground">{item.label}</p>
                       </CardContent>
@@ -525,23 +669,25 @@ export default function HowItWorks() {
 
               {/* What Citi Saves */}
               <div>
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-primary mb-8 text-center">What Citi Saves</h3>
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-8 text-center">What Citi Saves</h3>
                 <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
                   <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                     <CardContent className="p-8 text-center">
-                      <div className="text-4xl font-bold text-success mb-2">$40M–$70M</div>
+                      <div className="text-4xl font-bold text-foreground mb-2">$40M–$70M</div>
                       <p className="text-muted-foreground">Development cost avoided</p>
                     </CardContent>
                   </Card>
                   <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                     <CardContent className="p-8 text-center">
-                      <div className="text-4xl font-bold text-success mb-2">18–24 mo</div>
+                      <div className="text-4xl font-bold text-foreground mb-2">18–24 mo</div>
                       <p className="text-muted-foreground">Build time saved</p>
                     </CardContent>
                   </Card>
-                  <Card className="bg-card border border-primary/30 shadow-sm hover:shadow-md transition-all">
+                  <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                     <CardContent className="p-8 text-center">
-                      <div className="text-4xl font-bold text-primary mb-2">90 days</div>
+                      <div className="text-4xl font-bold text-foreground mb-2">
+                        <AnimatedCounter num={90} /> days
+                      </div>
                       <p className="text-muted-foreground">LumiqAI deployment time</p>
                     </CardContent>
                   </Card>
@@ -554,7 +700,7 @@ export default function HowItWorks() {
         {/* SECTION 6 — SECURITY & GOVERNANCE */}
         <section id="security" className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-7xl mx-auto">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
                   SECURITY & GOVERNANCE
@@ -602,7 +748,7 @@ export default function HowItWorks() {
         {/* SECTION 7 — GLOBAL SCALABILITY */}
         <section id="scalability" className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-7xl mx-auto">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
                   GLOBAL SCALABILITY
@@ -643,7 +789,7 @@ export default function HowItWorks() {
         {/* SECTION 8 — CALL TO ACTION */}
         <section className="py-24 md:py-32 lg:py-40 bg-gradient-to-br from-primary/10 via-primary/5 to-primary/10 relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
-            <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
+            <motion.div {...fadeInUp} className="max-w-6xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wide mb-6">
                 GET STARTED TODAY
               </div>
