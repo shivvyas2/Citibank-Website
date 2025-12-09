@@ -45,18 +45,39 @@ export default function CaseStudy() {
         {/* Hero Section */}
         <section className="relative overflow-hidden pt-8 md:pt-12 lg:pt-16 pb-20 md:pb-24 lg:pb-32 bg-gradient-to-b from-primary/10 to-background">
           <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wide mb-6">
-                CITI CASE STUDY · EXECUTIVE EDITION
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                {/* Text Content - Left Side */}
+                <div className="order-2 lg:order-1">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wide mb-6">
+                    CITI CASE STUDY · EXECUTIVE EDITION
+                  </div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground leading-tight">
+                    Modernizing Citi's Credit Funnel Through{" "}
+                    <span className="text-primary">Consumer + SMB</span>{" "}
+                    Credit Intelligence
+                  </h1>
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    A strategic assessment of Citi's credit visibility gap — and how LumiqAI restores approvals, retention, and competitive positioning across both Consumer and Business Banking.
+                  </p>
+                </div>
+
+                {/* Hero Image - Right Side */}
+                <div className="order-1 lg:order-2">
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <img
+                      src="/Case Study/Case Study Hero.png"
+                      alt="Case Study Hero"
+                      className="w-full h-auto"
+                    />
+                  </motion.div>
+                </div>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground leading-tight">
-                Modernizing Citi's Credit Funnel Through{" "}
-                <span className="text-primary">Consumer + SMB</span>{" "}
-                Credit Intelligence
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                A strategic assessment of Citi's credit visibility gap — and how LumiqAI restores approvals, retention, and competitive positioning across both Consumer and Business Banking.
-              </p>
             </motion.div>
           </div>
         </section>
