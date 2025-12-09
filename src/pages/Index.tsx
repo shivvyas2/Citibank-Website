@@ -67,7 +67,7 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16 max-w-5xl mx-auto"
+            className="text-center mb-16 max-w-7xl mx-auto"
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-tight mb-4">
               Chase, Capital One, and Wells Fargo each built only one side of this stack.
@@ -83,7 +83,7 @@ function Index() {
           </motion.div>
 
           {/* Two Cards Side by Side */}
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             
             {/* Left Card - Consumer */}
             <motion.div
@@ -237,7 +237,7 @@ function Index() {
             className="mt-16 mb-16"
           >
             <h3 className="text-center text-2xl md:text-3xl font-heading font-bold text-foreground mb-12">What It Does</h3>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
               <Card className="text-center hover:shadow-lg transition-all duration-300">
                 <CardContent className="pt-8 pb-8">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
@@ -289,7 +289,7 @@ function Index() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Left Column - Competitor Diversion */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -425,7 +425,7 @@ function Index() {
           </motion.div>
 
           {/* 2x2 Impact Grid */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto">
             {/* Metric 1 - Consumer Lift */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -587,22 +587,27 @@ function Index() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-24 relative scroll-mt-20">
+      <section id="how-it-works" className="pt-24 md:pt-32 lg:pt-40 pb-24 md:pb-32 lg:pb-40 relative scroll-mt-20 bg-background-secondary">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-16 lg:mb-24"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-6">
+              HOW IT WORKS
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
               Three steps to convert qualified customers
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Transform declined applicants into approved customers through intelligent analysis and compliant expansion
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
             {[
               {
                 step: 1,
@@ -630,15 +635,23 @@ function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-card border border-border shadow-sm hover:border-primary/50 transition-all duration-300 group text-center">
-                  <CardContent className="pt-8 pb-8">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 border border-primary/20 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl font-bold text-primary">{item.step}</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
-                  </CardContent>
-                </Card>
+                <div className="group h-full bg-background rounded-2xl p-10 lg:p-12 transition-all duration-300 shadow-sm hover:shadow-lg border border-border">
+                  {/* Icon */}
+                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className="w-8 h-8 text-primary-foreground" />
+                  </div>
+
+                  {/* Step Number */}
+                  <div className="text-primary text-sm font-semibold uppercase tracking-wide mb-4">
+                    Step {item.step}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl md:text-3xl font-heading text-foreground mb-6">{item.title}</h3>
+
+                  {/* Description */}
+                  <p className="text-base md:text-lg font-body text-muted-foreground leading-relaxed">{item.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -659,7 +672,7 @@ function Index() {
             <p className="text-muted-foreground">Built for decision-makers who drive portfolio growth and manage risk</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {[
               { icon: Briefcase, title: "SMB Card Portfolio Owners", description: "Drive card adoption and spend" },
               { icon: LineChartIcon, title: "Digital Banking / Platform Heads", description: "Embed credit intelligence into channels" },
@@ -759,7 +772,7 @@ function Index() {
             </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
             {[
               {
                 icon: Lock,
@@ -831,7 +844,7 @@ function Index() {
             </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
             {[
               {
                 icon: GitBranch,
@@ -888,7 +901,7 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-7xl mx-auto text-center"
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Start a 6-Week Pilot with Pre-Agreed Success Criteria

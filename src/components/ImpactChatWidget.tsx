@@ -5,20 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function ImpactChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Show widget after user scrolls a bit
-    const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Widget is always visible, but can be toggled
+    setIsVisible(true);
   }, []);
 
   return (
