@@ -7,7 +7,7 @@ export function Footer() {
   const navigation = [
     { label: "How It Works", href: "/how-it-works" },
     { label: "Case Study", href: "/case-study" },
-    { label: "Demo", href: "/demo" },
+    // { label: "Demo", href: "/demo" }, // Commented out - keeping code as backup
     { label: "Pilot", href: "/pilot" },
   ];
 

@@ -28,7 +28,8 @@ import {
   Clock,
   Server,
   Key,
-  Layers
+  Layers,
+  XCircle
 } from "lucide-react";
 import { z } from "zod";
 
@@ -48,6 +49,15 @@ const pilotFormSchema = z.object({
 });
 
 type PilotFormData = z.infer<typeof pilotFormSchema>;
+
+// Competitor comparison data
+const competitorData = [
+  { bank: "Chase", consumer: "Credit Journey", business: false, prequal: true, pathways: true },
+  { bank: "Capital One", consumer: "CreditWise", business: false, prequal: true, pathways: true },
+  { bank: "Wells Fargo", consumer: "Close Up", business: false, prequal: true, pathways: true },
+  { bank: "AmEx", consumer: "Internal scoring", business: "Business logic only", prequal: true, pathways: true },
+  { bank: "Citi", consumer: false, business: false, prequal: false, pathways: false }
+];
 
 export default function Pilot() {
   const { toast } = useToast();
@@ -179,16 +189,111 @@ export default function Pilot() {
         </div>
       </section>
 
-      {/* Section 2 - Pilot Scope */}
-      <section className="py-16 bg-gradient-to-b from-[#0B0F14] to-[#131920]">
+      {/* Section 2 - Why This Matters (Competitor Table) */}
+      <section className="py-20 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-6">
-          <motion.div {...fadeInUp} className="mb-10">
-            <div className="text-xs font-bold text-[#33CCFF] tracking-wider mb-2">02 — PILOT SCOPE</div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              Dual-Platform Credit Intelligence
-            </h2>
-            <p className="text-gray-400">Consumer + Business journeys deployed simultaneously.</p>
+          <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
+            <div className="text-center mb-12 lg:mb-16">
+              <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">02 — WHY THIS MATTERS</div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
+                Because Citi currently has no in-app credit intelligence layer.
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                This shows the precise capability competitors already use to intercept Citi customers.
+              </p>
+              <div className="h-px w-24 bg-primary mx-auto mt-6" />
+            </div>
+
+            {/* Competitor Comparison Table */}
+            <motion.div {...fadeInUp}>
+              <Card className="bg-card border border-border shadow-sm overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border bg-primary">
+                        <th className="px-4 py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Bank</th>
+                        <th className="px-4 py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Consumer Credit Layer</th>
+                        <th className="px-4 py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Business Credit Layer</th>
+                        <th className="px-4 py-4 text-center text-xs font-bold text-primary-foreground uppercase tracking-wider">In-App Prequal</th>
+                        <th className="px-4 py-4 text-center text-xs font-bold text-primary-foreground uppercase tracking-wider">Predictive Pathways</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {competitorData.map((row, idx) => (
+                        <tr 
+                          key={idx} 
+                          className={`border-b border-border ${row.bank === 'Citi' ? 'bg-foreground/5' : idx % 2 === 0 ? 'bg-background-secondary' : 'bg-background'}`}
+                        >
+                          <td className={`px-4 py-4 text-sm font-semibold ${row.bank === 'Citi' ? 'text-foreground' : 'text-foreground'}`}>
+                            {row.bank}
+                          </td>
+                          <td className="px-4 py-4 text-sm">
+                            {row.consumer ? (
+                              <span className="text-primary">{row.consumer}</span>
+                            ) : (
+                              <span className="flex items-center gap-1 text-foreground">
+                                <XCircle className="h-4 w-4" /> None
+                              </span>
+                            )}
+                          </td>
+                          <td className="px-4 py-4 text-sm">
+                            {row.business === true ? (
+                              <CheckCircle2 className="h-4 w-4 text-foreground" />
+                            ) : row.business ? (
+                              <span className="text-muted-foreground text-xs">{row.business}</span>
+                            ) : (
+                              <span className="flex items-center gap-1 text-foreground">
+                                <XCircle className="h-4 w-4" /> None
+                              </span>
+                            )}
+                          </td>
+                          <td className="px-4 py-4 text-center">
+                            {row.prequal ? (
+                              <CheckCircle2 className="h-4 w-4 text-foreground mx-auto" />
+                            ) : (
+                              <XCircle className="h-4 w-4 text-foreground mx-auto" />
+                            )}
+                          </td>
+                          <td className="px-4 py-4 text-center">
+                            {row.pathways ? (
+                              <CheckCircle2 className="h-4 w-4 text-foreground mx-auto" />
+                            ) : (
+                              <XCircle className="h-4 w-4 text-foreground mx-auto" />
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Card>
+            </motion.div>
+
+            <motion.div {...fadeInUp} className="mt-8">
+              <Card className="bg-primary border-0 shadow-lg">
+                <CardContent className="p-6 text-center">
+                  <p className="text-primary-foreground text-lg">
+                    This shows Citi jumping from <span className="font-bold">"No capability"</span> → <span className="font-bold">"Industry leader"</span> in a single integrated deployment.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Section 3 - Pilot Scope */}
+      <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
+            <div className="text-center mb-12 lg:mb-16">
+              <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">03 — PILOT SCOPE</div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
+                Dual-Platform Credit Intelligence
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Consumer + Business journeys deployed simultaneously.</p>
+              <div className="h-px w-24 bg-primary mx-auto mt-6" />
+            </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Consumer Scope */}
@@ -282,6 +387,7 @@ export default function Pilot() {
                 </p>
               </CardContent>
             </Card>
+          </motion.div>
           </motion.div>
         </div>
       </section>

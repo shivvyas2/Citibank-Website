@@ -203,101 +203,194 @@ export default function CaseStudy() {
                 <p className="text-xl text-foreground leading-relaxed mb-4">
                   Citi's customers must leave Citi's ecosystem to check their credit score. The moment they do, Chase, AmEx, Capital One, Apple Card, and fintech lenders intercept them with prequalification offers.
                 </p>
-                <p className="text-xl font-bold text-destructive">
+                <p className="text-xl font-bold text-foreground">
                   This creates silent funnel amputation: Citi never sees the demand signal.
                 </p>
               </motion.div>
 
-              {/* Competitive Flow Images */}
-              <div className="grid md:grid-cols-2 gap-10 mb-10">
-                <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                  <Card className="border border-border shadow-sm">
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-bold text-foreground mb-4 text-center">Consumer Journey</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <img 
-                          src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/COnsumer/Consumer.PNG" 
-                          alt="Consumer Checks Score Elsewhere"
-                          className="w-full h-auto rounded-lg max-w-[240px] mx-auto"
-                        />
-                        <img 
-                          src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.PNG" 
-                          alt="Competitor Prequal Consumer"
-                          className="w-full h-auto rounded-lg max-w-[240px] mx-auto"
-                        />
-                        <img 
-                          src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Consumer.PNG" 
-                          alt="Competitor Approval Consumer"
-                          className="w-full h-auto rounded-lg max-w-[240px] mx-auto"
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-                <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-                  <Card className="border border-border shadow-sm">
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-bold text-foreground mb-4 text-center">Business Journey</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <img 
-                          src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/Business/IMG_0202.PNG" 
-                          alt="Business Checks Score Elsewhere"
-                          className="w-full h-auto rounded-lg max-w-[240px] mx-auto"
-                        />
-                        <img 
-                          src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Business.PNG" 
-                          alt="Competitor Prequal Business"
-                          className="w-full h-auto rounded-lg max-w-[240px] mx-auto"
-                        />
-                        <img 
-                          src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Business.PNG" 
-                          alt="Competitor Approval Business"
-                          className="w-full h-auto rounded-lg max-w-[240px] mx-auto"
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </div>
+              {/* Timeline UI */}
+              <div className="relative max-w-6xl mx-auto">
+                {/* Timeline Line */}
+                <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-border"></div>
 
-              {/* Competitive Flow Diagram */}
-              <motion.div {...fadeInUp}>
-                <Card className="bg-card border border-border shadow-sm">
-                  <CardContent className="p-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
-                      <div className="flex items-center gap-3 bg-primary/10 px-4 py-3 rounded-lg border border-primary/30">
-                        <Users className="h-6 w-6 text-primary" />
-                        <span className="text-foreground font-medium">Customer</span>
-                      </div>
-                      <ChevronRight className="h-6 w-6 text-muted-foreground rotate-90 md:rotate-0" />
-                      <div className="flex items-center gap-3 bg-muted/30 px-4 py-3 rounded-lg border border-border">
-                        <Eye className="h-6 w-6 text-muted-foreground" />
-                        <span className="text-muted-foreground">Checks Score Elsewhere</span>
-                      </div>
-                      <ChevronRight className="h-6 w-6 text-muted-foreground rotate-90 md:rotate-0" />
-                      <div className="flex items-center gap-3 bg-warning/10 px-4 py-3 rounded-lg border border-warning/30">
-                        <CreditCard className="h-6 w-6 text-warning" />
-                        <span className="text-warning-foreground">Competitor Prequal</span>
-                      </div>
-                      <ChevronRight className="h-6 w-6 text-muted-foreground rotate-90 md:rotate-0" />
-                      <div className="flex items-center gap-3 bg-success/10 px-4 py-3 rounded-lg border border-success/30">
-                        <CheckCircle2 className="h-6 w-6 text-success" />
-                        <span className="text-success-foreground">Competitor Approval</span>
-                      </div>
-                      <ChevronRight className="h-6 w-6 text-muted-foreground rotate-90 md:rotate-0" />
-                      <div className="flex items-center gap-3 bg-destructive/10 px-4 py-3 rounded-lg border border-destructive/30">
-                        <XCircle className="h-6 w-6 text-destructive" />
-                        <span className="text-destructive-foreground">Citi Never Sees Intent</span>
+                {/* Timeline Items */}
+                <div className="space-y-12">
+                  {/* Step 1: Checks Score Elsewhere */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                          <span className="text-primary-foreground font-bold text-sm">1</span>
+                        </div>
                       </div>
                     </div>
                     
-                    <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-4 text-center">
-                      <AlertTriangle className="h-6 w-6 text-destructive mx-auto mb-2" />
-                      <span className="text-destructive font-bold">Point of Loss: No Citi Credit Layer</span>
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8">
+                          <div className="text-center mb-6">
+                            <h3 className="text-xl font-heading font-bold text-foreground mb-2">Checks Score Elsewhere</h3>
+                            <p className="text-muted-foreground text-sm">Customer leaves Citi's ecosystem to check credit score</p>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="text-center">
+                              <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
+                              <img 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/COnsumer/Consumer.PNG" 
+                                alt="Consumer Checks Score Elsewhere"
+                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
+                              />
+                            </div>
+                            <div className="text-center">
+                              <p className="text-sm font-semibold text-foreground mb-3">Business</p>
+                              <img 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/Business/IMG_0202.PNG" 
+                                alt="Business Checks Score Elsewhere"
+                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                  </motion.div>
+
+                  {/* Step 2: Competitor Prequal */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                          <span className="text-primary-foreground font-bold text-sm">2</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8">
+                          <div className="text-center mb-6">
+                            <h3 className="text-xl font-heading font-bold text-foreground mb-2">Competitor Prequal</h3>
+                            <p className="text-muted-foreground text-sm">Competitors intercept with prequalification offers</p>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="text-center">
+                              <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
+                              <img 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.png" 
+                                alt="Competitor Prequal Consumer"
+                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
+                              />
+                            </div>
+                            <div className="text-center">
+                              <p className="text-sm font-semibold text-foreground mb-3">Business</p>
+                              <img 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Business.png" 
+                                alt="Competitor Prequal Business"
+                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </motion.div>
+
+                  {/* Step 3: Competitor Approval */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                          <span className="text-primary-foreground font-bold text-sm">3</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8">
+                          <div className="text-center mb-6">
+                            <h3 className="text-xl font-heading font-bold text-foreground mb-2">Competitor Approval</h3>
+                            <p className="text-muted-foreground text-sm">Customer gets approved by competitor</p>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="text-center">
+                              <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
+                              <img 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Consumer.PNG" 
+                                alt="Competitor Approval Consumer"
+                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
+                              />
+                            </div>
+                            <div className="text-center">
+                              <p className="text-sm font-semibold text-foreground mb-3">Business</p>
+                              <img 
+                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Business.PNG" 
+                                alt="Competitor Approval Business"
+                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
+                              />
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </motion.div>
+
+                  {/* Step 4: Citi Never Sees Intent */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+                  >
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
+                      <div className="w-16 h-16 rounded-full bg-background border-4 border-foreground flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
+                          <span className="text-background font-bold text-sm">4</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="md:ml-24 flex-1">
+                      <Card className="bg-card border-2 border-foreground shadow-sm hover:shadow-md transition-all">
+                        <CardContent className="p-6 md:p-8 text-center">
+                          <AlertTriangle className="h-8 w-8 text-foreground mx-auto mb-4" />
+                          <h3 className="text-xl font-heading font-bold text-foreground mb-2">Citi Never Sees Intent</h3>
+                          <p className="text-muted-foreground">
+                            Point of Loss: No Citi Credit Layer
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -322,21 +415,21 @@ export default function CaseStudy() {
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                  <Card className="h-full bg-destructive/5 border-destructive/30 shadow-sm">
+                  <Card className="h-full bg-card border border-border shadow-sm">
                     <CardContent className="p-8">
-                      <div className="text-sm font-bold text-destructive tracking-wider mb-4 uppercase">LEAKAGE TODAY</div>
+                      <div className="text-sm font-bold text-foreground tracking-wider mb-4 uppercase">LEAKAGE TODAY</div>
                       <div className="space-y-4">
-                        <div className="flex justify-between items-center py-3 border-b border-destructive/20">
+                        <div className="flex justify-between items-center py-3 border-b border-border">
                           <span className="text-foreground">Consumer</span>
-                          <span className="text-2xl font-bold text-destructive">$600M–$900M/year</span>
+                          <span className="text-2xl font-bold text-foreground">$600M–$900M/year</span>
                         </div>
-                        <div className="flex justify-between items-center py-3 border-b border-destructive/20">
+                        <div className="flex justify-between items-center py-3 border-b border-border">
                           <span className="text-foreground">SMB</span>
-                          <span className="text-2xl font-bold text-destructive">$300M–$700M/year</span>
+                          <span className="text-2xl font-bold text-foreground">$300M–$700M/year</span>
                         </div>
                         <div className="flex justify-between items-center py-3">
                           <span className="font-semibold text-foreground">Total</span>
-                          <span className="text-3xl font-bold text-destructive">$900M–$1.6B+/year</span>
+                          <span className="text-3xl font-bold text-foreground">$900M–$1.6B+/year</span>
                         </div>
                       </div>
                     </CardContent>
@@ -344,21 +437,21 @@ export default function CaseStudy() {
                 </motion.div>
 
                 <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-                  <Card className="h-full bg-success/5 border-success/30 shadow-sm">
+                  <Card className="h-full bg-card border border-border shadow-sm">
                     <CardContent className="p-8">
-                      <div className="text-sm font-bold text-success tracking-wider mb-4 uppercase">RECOVERED WITH LUMIQAI</div>
+                      <div className="text-sm font-bold text-foreground tracking-wider mb-4 uppercase">RECOVERED WITH LUMIQAI</div>
                       <div className="space-y-4">
-                        <div className="flex justify-between items-center py-3 border-b border-success/20">
+                        <div className="flex justify-between items-center py-3 border-b border-border">
                           <span className="text-foreground">Consumer Recovery</span>
-                          <span className="text-2xl font-bold text-success">$600M–$900M</span>
+                          <span className="text-2xl font-bold text-foreground">$600M–$900M</span>
                         </div>
-                        <div className="flex justify-between items-center py-3 border-b border-success/20">
+                        <div className="flex justify-between items-center py-3 border-b border-border">
                           <span className="text-foreground">SMB Recovery</span>
-                          <span className="text-2xl font-bold text-success">$300M–$700M</span>
+                          <span className="text-2xl font-bold text-foreground">$300M–$700M</span>
                         </div>
                         <div className="flex justify-between items-center py-3">
                           <span className="font-semibold text-foreground">Build Cost Avoided</span>
-                          <span className="text-xl font-bold text-success">$40M–$70M saved</span>
+                          <span className="text-xl font-bold text-foreground">$40M–$70M saved</span>
                         </div>
                       </div>
                     </CardContent>
@@ -419,22 +512,22 @@ export default function CaseStudy() {
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
                   <Card className="border border-border shadow-sm">
-                    <CardContent className="p-0">
+                    <CardContent className="p-4 flex justify-center">
                       <img 
                         src="/Case Study/Citi Lacks the credit in/consumer.png" 
                         alt="Citi Lacks Consumer Credit Intelligence"
-                        className="w-full h-auto rounded-lg"
+                        className="w-full h-auto rounded-lg max-w-xs"
                       />
                     </CardContent>
                   </Card>
                 </motion.div>
                 <motion.div {...fadeInUp} transition={{ delay: 0.5 }}>
                   <Card className="border border-border shadow-sm">
-                    <CardContent className="p-0">
+                    <CardContent className="p-4 flex justify-center">
                       <img 
                         src="/Case Study/Citi Lacks the credit in/biz.png" 
                         alt="Citi Lacks Business Credit Intelligence"
-                        className="w-full h-auto rounded-lg"
+                        className="w-full h-auto rounded-lg max-w-xs"
                       />
                     </CardContent>
                   </Card>
@@ -626,70 +719,117 @@ export default function CaseStudy() {
                 <div className="h-px w-24 bg-primary mx-auto" />
               </div>
 
-              <motion.div {...fadeInUp} className="mb-12 max-w-3xl mx-auto">
-                <ul className="space-y-4 text-lg text-foreground">
-                  <li className="flex items-start gap-3">
-                    <AlertTriangle className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
-                    Open banking accelerates intent leakage.
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <TrendingUp className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
-                    Competitors deepen their funnels.
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Zap className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
-                    Citi's restructuring demands fast, high-ROI digital modernization.
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Clock className="h-6 w-6 text-destructive flex-shrink-0 mt-0.5" />
-                    Waiting 12–24 months will make today's gap irreversible.
-                  </li>
-                </ul>
-              </motion.div>
+              <div className="grid lg:grid-cols-2 gap-8 mb-12">
+                {/* Left Column - Urgency Factors */}
+                <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
+                  <Card className="h-full border border-border shadow-sm">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                        <AlertTriangle className="h-5 w-5 text-primary" />
+                        The Urgency
+                      </h3>
+                      <ul className="space-y-4">
+                        <li className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <AlertTriangle className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-foreground font-medium">Open banking accelerates intent leakage.</p>
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <TrendingUp className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-foreground font-medium">Competitors deepen their funnels.</p>
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Zap className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-foreground font-medium">Citi's restructuring demands fast, high-ROI digital modernization.</p>
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Clock className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-foreground font-medium">Waiting 12–24 months will make today's gap irreversible.</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </motion.div>
 
-              {/* What This Means for Citi in 2026 */}
-              <motion.div {...fadeInUp} className="mb-12 max-w-3xl mx-auto">
-                <h3 className="text-xl font-bold text-primary mb-6">What this means for Citi in 2026</h3>
-                <ul className="space-y-3 text-lg text-foreground">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    A safe lever for deposit & card growth
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    A differentiated SPCP-compliant credit expansion strategy
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    Regulatory-forward posture (prevents surprises)
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    A measurable boost in card conversion without IT lift
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                    Portfolio growth in protected demographic clusters
-                  </li>
-                </ul>
-              </motion.div>
+                {/* Right Column - What This Means */}
+                <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
+                  <Card className="h-full border border-border shadow-sm">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+                        <CheckCircle2 className="h-5 w-5" />
+                        What This Means for Citi in 2026
+                      </h3>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">A safe lever for deposit & card growth</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">A differentiated SPCP-compliant credit expansion strategy</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">Regulatory-forward posture (prevents surprises)</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">A measurable boost in card conversion without IT lift</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">Portfolio growth in protected demographic clusters</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </div>
 
-              {/* Timeline */}
-              <motion.div {...fadeInUp}>
-                <Card className="bg-card border border-border shadow-lg overflow-hidden max-w-3xl mx-auto">
+              {/* Timeline - Full Width */}
+              <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
+                <Card className="bg-card border border-border shadow-lg overflow-hidden">
                   <CardContent className="p-8">
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-sm font-bold text-muted-foreground">Dec 2025</span>
-                      <span className="text-sm font-bold text-muted-foreground">Jan 2026</span>
-                      <span className="text-sm font-bold text-muted-foreground">Mar 2026</span>
+                    <div className="text-center mb-6">
+                      <h3 className="text-xl font-bold text-foreground mb-2">Window of Opportunity</h3>
+                      <p className="text-muted-foreground">December 2025 – March 2026</p>
                     </div>
-                    <div className="relative h-4 bg-muted rounded-full overflow-hidden">
-                      <div className="absolute left-0 right-0 h-full bg-gradient-to-r from-primary to-primary-dark rounded-full" />
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-sm font-bold text-foreground">Dec 2025</span>
+                      <span className="text-sm font-bold text-foreground">Jan 2026</span>
+                      <span className="text-sm font-bold text-foreground">Mar 2026</span>
                     </div>
-                    <div className="text-center mt-4">
-                      <span className="inline-block px-4 py-2 bg-primary text-primary-foreground text-sm font-bold rounded-full">
-                        Window of Opportunity: December 2025 – March 2026
-                      </span>
+                    <div className="relative h-6 bg-muted rounded-full overflow-hidden">
+                      <div className="absolute left-0 right-0 h-full bg-gradient-to-r from-primary via-primary-light to-primary-dark rounded-full" />
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 mt-6 text-center">
+                      <div>
+                        <div className="text-sm font-semibold text-foreground mb-1">Kickoff</div>
+                        <div className="text-xs text-muted-foreground">Integration begins</div>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground mb-1">Risk Review</div>
+                        <div className="text-xs text-muted-foreground">Compliance approval</div>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground mb-1">Go Live</div>
+                        <div className="text-xs text-muted-foreground">Pilot deployment</div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -880,14 +1020,25 @@ export default function CaseStudy() {
                       </thead>
                       <tbody>
                         {[
-                          { bank: "Chase", consumer: true, smb: false },
-                          { bank: "Capital One", consumer: true, smb: false },
-                          { bank: "Wells Fargo", consumer: true, smb: false },
-                          { bank: "AmEx", consumer: true, smb: false },
-                          { bank: "Apple", consumer: true, smb: false },
+                          { bank: "Chase", logo: "/Case Study/WHy citi wins/chase.svg", consumer: true, smb: false },
+                          { bank: "Capital One", logo: "/Case Study/WHy citi wins/Capital_One_logo.svg", consumer: true, smb: false },
+                          { bank: "Wells Fargo", logo: "/Case Study/WHy citi wins/wells-fargo-1.svg", consumer: true, smb: false },
+                          { bank: "AmEx", logo: "/Case Study/WHy citi wins/amex-3.svg", consumer: true, smb: false },
+                          { bank: "Apple", logo: "/Case Study/WHy citi wins/Apple_Card.svg", consumer: true, smb: false },
                         ].map((row, index) => (
                           <tr key={index} className={index % 2 === 0 ? "bg-background-secondary" : "bg-background"}>
-                            <td className="p-4 font-medium text-foreground">{row.bank}</td>
+                            <td className="p-4">
+                              <div className="flex items-center gap-3">
+                                <div className="w-12 h-8 flex items-center justify-center flex-shrink-0">
+                                  <img 
+                                    src={row.logo} 
+                                    alt={row.bank} 
+                                    className="h-6 w-auto object-contain"
+                                  />
+                                </div>
+                                <span className="font-medium text-foreground">{row.bank}</span>
+                              </div>
+                            </td>
                             <td className="p-4 text-center">
                               {row.consumer ? (
                                 <CheckCircle2 className="h-6 w-6 text-success mx-auto" />
