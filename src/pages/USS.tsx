@@ -450,7 +450,7 @@ function USS() {
                   Start a 6-week pilot with pre-agreed success criteria and see the same conversion lift you achieved with consumer credit.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/pilot">
+                  <Link to="/pilot#pilot-form">
                     <Button size="lg" className="group text-lg px-8 py-6">
                       Book a 20-Minute Pilot Review
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

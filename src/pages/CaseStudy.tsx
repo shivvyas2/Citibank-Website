@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -309,6 +310,7 @@ export default function CaseStudy() {
                                 src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.png" 
                                 alt="Competitor Prequal Consumer"
                                 className="w-full h-auto rounded-lg max-w-xs mx-auto"
+                                loading="lazy"
                               />
                             </div>
                             <div className="text-center">
@@ -607,6 +609,7 @@ export default function CaseStudy() {
                       src="/Case Study/lumiqai consumer + SMB/consumer/Citi Consumer LUMIQ.png" 
                       alt="Citi Consumer LUMIQ"
                       className="w-full h-auto rounded-lg max-w-md mx-auto"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -620,6 +623,7 @@ export default function CaseStudy() {
                       src="/Case Study/lumiqai consumer + SMB/Business/Citi Business LUMIQ.png" 
                       alt="Citi Business LUMIQ"
                       className="w-full h-auto rounded-lg max-w-md mx-auto"
+                      loading="lazy"
                     />
                   </div>
                   <div className="order-1 lg:order-2">
@@ -1128,9 +1132,12 @@ export default function CaseStudy() {
                 <Button 
                   size="lg" 
                   className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-bold px-8 py-6 text-lg"
+                  asChild
                 >
-                  Book Pilot Review
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <Link to="/pilot#pilot-form">
+                    Book Pilot Review
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
               </motion.div>
             </div>
