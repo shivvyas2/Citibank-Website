@@ -43,6 +43,7 @@ function PhoneMockup({ bankName, badge, imagePath, index }: PhoneMockupProps) {
 
 interface BentoBoxProps {
   title?: string;
+  logo?: string;
   phones: Array<{
     bankName: string;
     badge?: {
@@ -54,7 +55,7 @@ interface BentoBoxProps {
   index: number;
 }
 
-function BentoBox({ title, phones, index }: BentoBoxProps) {
+function BentoBox({ title, logo, phones, index }: BentoBoxProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -63,8 +64,18 @@ function BentoBox({ title, phones, index }: BentoBoxProps) {
       transition={{ delay: index * 0.15 }}
       className="bg-card border border-border rounded-3xl p-6 lg:p-8 shadow-sm hover:shadow-md transition-all duration-300"
     >
-      {title && (
-        <h3 className="text-lg font-bold text-foreground mb-6 text-center">{title}</h3>
+      {(title || logo) && (
+        <div className="mb-6 flex justify-center items-center">
+          {logo ? (
+            <img
+              src={logo}
+              alt={title || "Bank Logo"}
+              className="h-8 md:h-10 w-auto object-contain"
+            />
+          ) : (
+            <h3 className="text-lg font-bold text-foreground">{title}</h3>
+          )}
+        </div>
       )}
       <div className="grid grid-cols-2 gap-6">
         {phones.map((phone, phoneIndex) => (
@@ -85,6 +96,7 @@ export function BankComparison() {
   const bentoBoxes = [
     {
       title: "Chase",
+      logo: "/The Compet Cost/chase.svg",
       phones: [
         {
           bankName: "Chase Consumer",
@@ -100,6 +112,7 @@ export function BankComparison() {
     },
     {
       title: "Wells Fargo",
+      logo: "/The Compet Cost/wells-fargo.svg",
       phones: [
         {
           bankName: "Wells Fargo Email",
@@ -115,6 +128,7 @@ export function BankComparison() {
     },
     {
       title: "Capital One",
+      logo: "/The Compet Cost/Capital_One_logo.svg",
       phones: [
         {
           bankName: "Capital One",
@@ -130,6 +144,7 @@ export function BankComparison() {
     },
     {
       title: "Citi - The Gap",
+      logo: "/citibank-5.svg",
       phones: [
         {
           bankName: "Citi Consumer",
@@ -170,6 +185,7 @@ export function BankComparison() {
             <BentoBox
               key={index}
               title={box.title}
+              logo={box.logo}
               phones={box.phones}
               index={index}
             />
