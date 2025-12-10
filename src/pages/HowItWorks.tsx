@@ -1,5 +1,6 @@
 import { motion, animate, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -87,9 +88,12 @@ export default function HowItWorks() {
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 text-lg"
+                    asChild
                   >
-                    Start Citi Pilot
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <Link to="/pilot">
+                      Start Citi Pilot
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
                   </Button>
                 </div>
 
@@ -726,9 +730,12 @@ export default function HowItWorks() {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-7 text-xl shadow-lg"
+                asChild
               >
-                Start Citi Pilot
-                <ArrowRight className="ml-3 h-6 w-6" />
+                <Link to="/pilot">
+                  Start Citi Pilot
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </Link>
               </Button>
             </motion.div>
           </div>
@@ -738,9 +745,12 @@ export default function HowItWorks() {
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur-sm border-t border-border md:hidden z-50">
           <Button 
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6"
+            asChild
           >
-            Start Citi Pilot
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <Link to="/pilot">
+              Start Citi Pilot
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
 
