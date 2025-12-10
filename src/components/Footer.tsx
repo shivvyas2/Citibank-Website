@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building2, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,13 +18,18 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Column 1: About */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-10 w-10 grid place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary shadow-lg">
-                <Building2 className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <div className="font-heading text-xl font-bold tracking-tight text-foreground">
-                LUMIQ AI × Citi
-              </div>
+            <div className="mb-4">
+              <Link
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="font-sans text-xl font-black tracking-tighter text-foreground uppercase"
+                style={{
+                  fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                LUMIQ × Citi
+              </Link>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-foreground/60">
               Unlock 15–20% more approvals from declined applications — without elevating risk.
