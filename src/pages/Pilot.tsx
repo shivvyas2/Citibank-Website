@@ -87,10 +87,10 @@ export default function Pilot() {
               This pilot is designed to produce <span className="text-primary-foreground font-medium">measurable revenue uplift within the first 60–90 days</span> of deployment.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-semibold rounded-full shadow-lg"
+                className="w-full sm:w-auto bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-semibold rounded-full shadow-lg px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base"
                 onClick={() => document.getElementById('pilot-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Start Citi Pilot
@@ -99,7 +99,7 @@ export default function Pilot() {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/20 hover:border-primary-foreground hover:text-primary-foreground rounded-full font-semibold shadow-md transition-all"
+                className="w-full sm:w-auto border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/20 hover:border-primary-foreground hover:text-primary-foreground rounded-full font-semibold shadow-md transition-all px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base"
                 asChild
               >
                 <a href="/Citi Model Governance Framework.pdf" download="Citi Model Governance Framework.pdf">
@@ -177,14 +177,14 @@ export default function Pilot() {
             <motion.div {...fadeInUp}>
               <Card className="bg-card border border-border shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
-                  <table className="w-full">
+                  <table className="w-full min-w-[600px]">
                     <thead>
                       <tr className="border-b border-border bg-primary">
-                        <th className="px-4 py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Bank</th>
-                        <th className="px-4 py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Consumer Credit Layer</th>
-                        <th className="px-4 py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Business Credit Layer</th>
-                        <th className="px-4 py-4 text-center text-xs font-bold text-primary-foreground uppercase tracking-wider">In-App Prequal</th>
-                        <th className="px-4 py-4 text-center text-xs font-bold text-primary-foreground uppercase tracking-wider">Predictive Pathways</th>
+                        <th className="px-2 sm:px-4 py-3 sm:py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Bank</th>
+                        <th className="px-2 sm:px-4 py-3 sm:py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Consumer Credit Layer</th>
+                        <th className="px-2 sm:px-4 py-3 sm:py-4 text-left text-xs font-bold text-primary-foreground uppercase tracking-wider">Business Credit Layer</th>
+                        <th className="px-2 sm:px-4 py-3 sm:py-4 text-center text-xs font-bold text-primary-foreground uppercase tracking-wider">In-App Prequal</th>
+                        <th className="px-2 sm:px-4 py-3 sm:py-4 text-center text-xs font-bold text-primary-foreground uppercase tracking-wider">Predictive Pathways</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -193,47 +193,47 @@ export default function Pilot() {
                           key={idx} 
                           className={`border-b border-border ${row.bank === 'Citi' ? 'bg-foreground/5' : idx % 2 === 0 ? 'bg-background-secondary' : 'bg-background'}`}
                         >
-                          <td className={`px-4 py-4 text-sm font-semibold ${row.bank === 'Citi' ? 'text-foreground' : 'text-foreground'}`}>
+                          <td className={`px-2 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-semibold ${row.bank === 'Citi' ? 'text-foreground' : 'text-foreground'}`}>
                             {row.logo && (
                               <img 
                                 src={row.logo} 
                                 alt={`${row.bank} logo`}
-                                className="h-6 w-auto"
+                                className="h-5 sm:h-6 w-auto"
                               />
                             )}
                           </td>
-                          <td className="px-4 py-4 text-sm">
+                          <td className="px-2 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm">
                             {row.consumer ? (
                               <span className="text-primary">{row.consumer}</span>
                             ) : (
                               <span className="flex items-center gap-1 text-foreground">
-                                <XCircle className="h-4 w-4" /> None
+                                <XCircle className="h-3 w-3 sm:h-4 sm:w-4" /> None
                               </span>
                             )}
                           </td>
-                          <td className="px-4 py-4 text-sm">
+                          <td className="px-2 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm">
                             {row.business === true ? (
-                              <CheckCircle2 className="h-4 w-4 text-foreground" />
+                              <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-foreground" />
                             ) : row.business ? (
                               <span className="text-muted-foreground text-xs">{row.business}</span>
                             ) : (
                               <span className="flex items-center gap-1 text-foreground">
-                                <XCircle className="h-4 w-4" /> None
+                                <XCircle className="h-3 w-3 sm:h-4 sm:w-4" /> None
                               </span>
                             )}
                           </td>
-                          <td className="px-4 py-4 text-center">
+                          <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
                             {row.prequal ? (
-                              <CheckCircle2 className="h-4 w-4 text-foreground mx-auto" />
+                              <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-foreground mx-auto" />
                             ) : (
-                              <XCircle className="h-4 w-4 text-foreground mx-auto" />
+                              <XCircle className="h-3 w-3 sm:h-4 sm:w-4 text-foreground mx-auto" />
                             )}
                           </td>
-                          <td className="px-4 py-4 text-center">
+                          <td className="px-2 sm:px-4 py-3 sm:py-4 text-center">
                             {row.pathways ? (
-                              <CheckCircle2 className="h-4 w-4 text-foreground mx-auto" />
+                              <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-foreground mx-auto" />
                             ) : (
-                              <XCircle className="h-4 w-4 text-foreground mx-auto" />
+                              <XCircle className="h-3 w-3 sm:h-4 sm:w-4 text-foreground mx-auto" />
                             )}
                           </td>
                         </tr>
@@ -414,15 +414,15 @@ export default function Pilot() {
                   {/* Content */}
                   <div className="lg:ml-24 flex-1">
                     <Card className="h-full border border-border bg-card shadow-sm">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="lg:hidden w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">1</div>
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                          <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">1</div>
                           <div>
-                            <h3 className="font-bold text-foreground text-lg">Phase 1</h3>
-                            <p className="text-sm text-primary font-medium">Weeks 1–3</p>
+                            <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 1</h3>
+                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 1–3</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-4 text-base">Alignment & Integration</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Alignment & Integration</h4>
                         <ul className="space-y-2">
                           {[
                             "Load Citi's product eligibility criteria",
@@ -431,8 +431,8 @@ export default function Pilot() {
                             "Security review & architecture approval",
                             "Risk governance sign-off"
                           ].map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                            <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                              <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
                               {item}
                             </li>
                           ))}
@@ -462,15 +462,15 @@ export default function Pilot() {
                   {/* Content */}
                   <div className="lg:ml-24 flex-1">
                     <Card className="h-full border border-border bg-card shadow-sm">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="lg:hidden w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">2</div>
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                          <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">2</div>
                           <div>
-                            <h3 className="font-bold text-foreground text-lg">Phase 2</h3>
-                            <p className="text-sm text-primary font-medium">Weeks 4–7</p>
+                            <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 2</h3>
+                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 4–7</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-4 text-base">Experience Layer & AI Eligibility</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Experience Layer & AI Eligibility</h4>
                         <ul className="space-y-2">
                           {[
                             "Build consumer & SMB journeys in-app",
@@ -478,8 +478,8 @@ export default function Pilot() {
                             "Deploy confidence bands based on Citi thresholds",
                             "Build decline-recovery flows"
                           ].map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                            <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                              <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
                               {item}
                             </li>
                           ))}
@@ -509,15 +509,15 @@ export default function Pilot() {
                   {/* Content */}
                   <div className="lg:ml-24 flex-1">
                     <Card className="h-full border border-border bg-card shadow-sm">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="lg:hidden w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">3</div>
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                          <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">3</div>
                           <div>
-                            <h3 className="font-bold text-foreground text-lg">Phase 3</h3>
-                            <p className="text-sm text-primary font-medium">Weeks 8–12</p>
+                            <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 3</h3>
+                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 8–12</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-4 text-base">Controlled Live Pilot</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Controlled Live Pilot</h4>
                         <ul className="space-y-2">
                           {[
                             "Go-live for limited consumer + SMB cohorts",
@@ -525,8 +525,8 @@ export default function Pilot() {
                             "Weekly performance dashboards",
                             "Pilot evaluation report for executive leadership"
                           ].map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                            <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                              <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
                               {item}
                             </li>
                           ))}
@@ -575,7 +575,7 @@ export default function Pilot() {
               <div className="h-px w-24 bg-primary mx-auto mt-6" />
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 {
                   icon: Target,
@@ -605,17 +605,17 @@ export default function Pilot() {
               ].map((section, idx) => (
                 <motion.div key={idx} {...fadeInUp} transition={{ delay: idx * 0.1 }}>
                   <Card className="h-full bg-card border border-border shadow-sm">
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                          <section.icon className="h-5 w-5 text-primary-foreground" />
+                    <CardContent className="p-4 sm:p-5">
+                      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
+                          <section.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary-foreground" />
                         </div>
-                        <h3 className="font-bold text-foreground text-sm">{section.title}</h3>
+                        <h3 className="font-bold text-foreground text-xs sm:text-sm">{section.title}</h3>
                       </div>
                       <ul className="space-y-2">
                         {section.items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                            <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                            <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
                             {item}
                           </li>
                         ))}
@@ -652,7 +652,7 @@ export default function Pilot() {
               <div className="h-px w-24 bg-primary mx-auto" />
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
               {[
                 { label: "SOC2 Type II", icon: Shield },
                 { label: "ISO 27001", icon: FileCheck },
@@ -661,20 +661,20 @@ export default function Pilot() {
               ].map((badge, idx) => (
                 <motion.div key={idx} {...fadeInUp} transition={{ delay: idx * 0.1 }}>
                   <Card className="bg-card border border-border">
-                    <CardContent className="p-4 flex items-center gap-3">
-                      <badge.icon className="h-5 w-5 text-primary" />
-                      <span className="text-sm font-medium text-foreground">{badge.label}</span>
+                    <CardContent className="p-3 sm:p-4 flex items-center gap-2 sm:gap-3">
+                      <badge.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                      <span className="text-xs sm:text-sm font-medium text-foreground">{badge.label}</span>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
               <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
                 <Card className="h-full bg-card border border-border">
-                  <CardContent className="p-5">
-                    <h3 className="font-bold text-foreground mb-4 text-sm">Data Handling</h3>
+                  <CardContent className="p-4 sm:p-5">
+                    <h3 className="font-bold text-foreground mb-3 sm:mb-4 text-xs sm:text-sm">Data Handling</h3>
                     <ul className="space-y-2">
                       {[
                         "No persistent storage of Citi customer data",
@@ -682,8 +682,8 @@ export default function Pilot() {
                         "Data isolation by environment",
                         "No cross-tenant commingling"
                       ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                          <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
                           {item}
                         </li>
                       ))}
@@ -694,8 +694,8 @@ export default function Pilot() {
 
               <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
                 <Card className="h-full bg-card border border-border">
-                  <CardContent className="p-5">
-                    <h3 className="font-bold text-foreground mb-4 text-sm">Permissions & Access</h3>
+                  <CardContent className="p-4 sm:p-5">
+                    <h3 className="font-bold text-foreground mb-3 sm:mb-4 text-xs sm:text-sm">Permissions & Access</h3>
                     <ul className="space-y-2">
                       {[
                         "Role-based access control",
@@ -703,8 +703,8 @@ export default function Pilot() {
                         "Principle of Least Privilege",
                         "Immutable audit logs"
                       ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                          <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
                           {item}
                         </li>
                       ))}
@@ -715,8 +715,8 @@ export default function Pilot() {
 
               <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
                 <Card className="h-full bg-card border border-border">
-                  <CardContent className="p-5">
-                    <h3 className="font-bold text-foreground mb-4 text-sm">Deployment Options</h3>
+                  <CardContent className="p-4 sm:p-5">
+                    <h3 className="font-bold text-foreground mb-3 sm:mb-4 text-xs sm:text-sm">Deployment Options</h3>
                     <ul className="space-y-2">
                       {[
                         "Citi-managed Kubernetes",
@@ -724,8 +724,8 @@ export default function Pilot() {
                         "Citi Private Cloud",
                         "On-prem container clusters"
                       ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                          <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
                           {item}
                         </li>
                       ))}

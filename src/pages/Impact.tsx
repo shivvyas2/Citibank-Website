@@ -104,8 +104,8 @@ function AnimatedMetric({ label, value, suffix = "", prefix = "$", color = brand
     >
       <div className="absolute inset-0 opacity-10" style={{ background: `radial-gradient(circle at 30% 50%, ${color}, transparent)` }} />
       <div className="relative z-10">
-        <div className="text-sm text-slate-400 mb-2">{label}</div>
-        <div className="text-4xl font-bold" style={{ color }}>
+        <div className="text-xs sm:text-sm text-slate-400 mb-2">{label}</div>
+        <div className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color }}>
           {prefix}{fmt.format(count)}{suffix}
         </div>
       </div>
@@ -180,7 +180,7 @@ export default function Impact() {
           </motion.div>
 
           {/* Hero Metrics */}
-          <div className="grid md:grid-cols-4 gap-6 mt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12">
             <AnimatedMetric label="Interchange Revenue" value={79.4} suffix="M" delay={0.1} />
             <AnimatedMetric label="CAC Savings" value={9.2} suffix="M" delay={0.2} />
             <AnimatedMetric label="Fee & Interest Income" value={14.3} suffix="M" delay={0.3} color={brand.success} />
@@ -277,63 +277,63 @@ export default function Impact() {
           >
             <h3 className="text-2xl font-semibold mb-6">Complete Financial Model — Base vs. Optimistic</h3>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full text-xs sm:text-sm min-w-[600px]">
                 <thead>
                   <tr className="text-left border-b border-slate-700">
-                    <th className="py-3 pr-6 text-slate-400 font-semibold">Metric</th>
-                    <th className="py-3 pr-6 text-slate-400 font-semibold">Base Case</th>
-                    <th className="py-3 pr-6 text-slate-400 font-semibold">Optimistic (Visine-Clear)</th>
-                    <th className="py-3 text-slate-400 font-semibold">Uplift</th>
+                    <th className="py-2 sm:py-3 pr-3 sm:pr-6 text-slate-400 font-semibold">Metric</th>
+                    <th className="py-2 sm:py-3 pr-3 sm:pr-6 text-slate-400 font-semibold">Base Case</th>
+                    <th className="py-2 sm:py-3 pr-3 sm:pr-6 text-slate-400 font-semibold">Optimistic</th>
+                    <th className="py-2 sm:py-3 text-slate-400 font-semibold">Uplift</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-300">Reach</td>
-                    <td className="py-4 pr-6">60%</td>
-                    <td className="py-4 pr-6 font-semibold" style={{ color: brand.accent }}>70%</td>
-                    <td className="py-4 text-slate-400">+10%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-300">Reach</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6">60%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold" style={{ color: brand.accent }}>70%</td>
+                    <td className="py-3 sm:py-4 text-slate-400">+10%</td>
                   </tr>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-300">Engagement</td>
-                    <td className="py-4 pr-6">35%</td>
-                    <td className="py-4 pr-6 font-semibold" style={{ color: brand.accent }}>45%</td>
-                    <td className="py-4 text-slate-400">+10%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-300">Engagement</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6">35%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold" style={{ color: brand.accent }}>45%</td>
+                    <td className="py-3 sm:py-4 text-slate-400">+10%</td>
                   </tr>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-300">Conversion Lift</td>
-                    <td className="py-4 pr-6">+15%</td>
-                    <td className="py-4 pr-6 font-semibold" style={{ color: brand.accent }}>+25%</td>
-                    <td className="py-4 text-slate-400">+67%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-300">Conversion Lift</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6">+15%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold" style={{ color: brand.accent }}>+25%</td>
+                    <td className="py-3 sm:py-4 text-slate-400">+67%</td>
                   </tr>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-300">Incremental Cards</td>
-                    <td className="py-4 pr-6">≈ 15.4K</td>
-                    <td className="py-4 pr-6 font-semibold" style={{ color: brand.accent }}>≈ 55.1K</td>
-                    <td className="py-4 text-slate-400">+257%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-300">Incremental Cards</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6">≈ 15.4K</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold" style={{ color: brand.accent }}>≈ 55.1K</td>
+                    <td className="py-3 sm:py-4 text-slate-400">+257%</td>
                   </tr>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-300">Avg Spend / Card</td>
-                    <td className="py-4 pr-6">$60K</td>
-                    <td className="py-4 pr-6 font-semibold" style={{ color: brand.accent }}>$80K</td>
-                    <td className="py-4 text-slate-400">+33%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-300">Avg Spend / Card</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6">$60K</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold" style={{ color: brand.accent }}>$80K</td>
+                    <td className="py-3 sm:py-4 text-slate-400">+33%</td>
                   </tr>
                   <tr className="border-b border-slate-800 bg-slate-800/30">
-                    <td className="py-4 pr-6 text-slate-200 font-semibold">Interchange Revenue</td>
-                    <td className="py-4 pr-6 font-semibold">$16.7M</td>
-                    <td className="py-4 pr-6 font-bold text-xl" style={{ color: brand.accent }}>$79.4M</td>
-                    <td className="py-4 text-slate-300 font-semibold">+375%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-200 font-semibold">Interchange Revenue</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold">$16.7M</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-bold text-lg sm:text-xl" style={{ color: brand.accent }}>$79.4M</td>
+                    <td className="py-3 sm:py-4 text-slate-300 font-semibold">+375%</td>
                   </tr>
                   <tr className="border-b border-slate-800 bg-slate-800/30">
-                    <td className="py-4 pr-6 text-slate-200 font-semibold">CAC Savings</td>
-                    <td className="py-4 pr-6 font-semibold">$2.6M</td>
-                    <td className="py-4 pr-6 font-bold text-xl" style={{ color: brand.accentSoft }}>$9.2M</td>
-                    <td className="py-4 text-slate-300 font-semibold">+254%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-200 font-semibold">CAC Savings</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold">$2.6M</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-bold text-lg sm:text-xl" style={{ color: brand.accentSoft }}>$9.2M</td>
+                    <td className="py-3 sm:py-4 text-slate-300 font-semibold">+254%</td>
                   </tr>
                   <tr className="bg-slate-800/50">
-                    <td className="py-4 pr-6 text-white font-bold text-lg">Total Annual Lift</td>
-                    <td className="py-4 pr-6 font-semibold">$19.3M</td>
-                    <td className="py-4 pr-6 font-bold text-2xl" style={{ color: "#F59E0B" }}>$102.9M</td>
-                    <td className="py-4 text-white font-bold">+433%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-white font-bold text-base sm:text-lg">Total Annual Lift</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-semibold">$19.3M</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 font-bold text-xl sm:text-2xl" style={{ color: "#F59E0B" }}>$102.9M</td>
+                    <td className="py-3 sm:py-4 text-white font-bold">+433%</td>
                   </tr>
                 </tbody>
               </table>
@@ -415,29 +415,29 @@ export default function Impact() {
           >
             <h3 className="text-2xl font-semibold mb-6">The Reality Shift</h3>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full text-xs sm:text-sm min-w-[400px]">
                 <thead>
                   <tr className="text-left border-b border-slate-700">
-                    <th className="py-3 pr-6 text-slate-400 font-semibold">Legacy State</th>
-                    <th className="py-3 text-slate-400 font-semibold">Post-LUMIQ Reality</th>
+                    <th className="py-2 sm:py-3 pr-3 sm:pr-6 text-slate-400 font-semibold">Legacy State</th>
+                    <th className="py-2 sm:py-3 text-slate-400 font-semibold">Post-LUMIQ Reality</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-400">No unified personal + business credit view</td>
-                    <td className="py-4 font-semibold" style={{ color: brand.accent }}>Integrated FICO + Intelliscore + FSR dashboard</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-400">No unified personal + business credit view</td>
+                    <td className="py-3 sm:py-4 font-semibold" style={{ color: brand.accent }}>Integrated FICO + Intelliscore + FSR dashboard</td>
                   </tr>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-400">CAC &gt;$160 / card via paid media</td>
-                    <td className="py-4 font-semibold" style={{ color: brand.accent }}>Owned-channel conversion → –40% cost per approval</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-400">CAC &gt;$160 / card via paid media</td>
+                    <td className="py-3 sm:py-4 font-semibold" style={{ color: brand.accent }}>Owned-channel conversion → –40% cost per approval</td>
                   </tr>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-400">Manual underwriting friction</td>
-                    <td className="py-4 font-semibold" style={{ color: brand.accent }}>AI Stage 1–4 decisioning in seconds</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-400">Manual underwriting friction</td>
+                    <td className="py-3 sm:py-4 font-semibold" style={{ color: brand.accent }}>AI Stage 1–4 decisioning in seconds</td>
                   </tr>
                   <tr className="border-b border-slate-800">
-                    <td className="py-4 pr-6 text-slate-400">Fragmented risk data</td>
-                    <td className="py-4 font-semibold" style={{ color: brand.accent }}>Unified journey → lower loss ratios by 1–3%</td>
+                    <td className="py-3 sm:py-4 pr-3 sm:pr-6 text-slate-400">Fragmented risk data</td>
+                    <td className="py-3 sm:py-4 font-semibold" style={{ color: brand.accent }}>Unified journey → lower loss ratios by 1–3%</td>
                   </tr>
                 </tbody>
               </table>
@@ -462,7 +462,7 @@ export default function Impact() {
             <p className="text-xl text-slate-400">The Next Wave: <span style={{ color: brand.success }}>$210–320M</span> Additional Uplift Potential</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
             {stage2Data.map((product, idx) => (
               <motion.div
                 key={product.product}
@@ -470,21 +470,21 @@ export default function Impact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`rounded-2xl p-6 ${brand.card} ${brand.border} relative overflow-hidden`}
+                className={`rounded-2xl p-4 sm:p-6 ${brand.card} ${brand.border} relative overflow-hidden`}
               >
                 <div className="absolute inset-0 opacity-5" style={{ background: `radial-gradient(circle at 50% 50%, ${brand.success}, transparent)` }} />
                 <div className="relative z-10">
-                  <h3 className="text-xl font-semibold mb-4">{product.product}</h3>
-                  <div className="space-y-3">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{product.product}</h3>
+                  <div className="space-y-2 sm:space-y-3">
                     <div>
                       <div className="text-xs text-slate-400 mb-1">Volume Uplift</div>
-                      <div className="text-2xl font-bold" style={{ color: brand.success }}>
+                      <div className="text-xl sm:text-2xl font-bold" style={{ color: brand.success }}>
                         +{product.volumeMin}–{product.volumeMax}%
                       </div>
                     </div>
                     <div>
                       <div className="text-xs text-slate-400 mb-1">Revenue Lift (Year 1)</div>
-                      <div className="text-2xl font-bold" style={{ color: brand.accent }}>
+                      <div className="text-xl sm:text-2xl font-bold" style={{ color: brand.accent }}>
                         ${product.revenueMin}–{product.revenueMax}M
                       </div>
                     </div>

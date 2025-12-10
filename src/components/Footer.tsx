@@ -32,7 +32,7 @@ export function Footer() {
               </Link>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-foreground/60">
-              Unlock 15–20% more approvals from declined applications — without elevating risk.
+              Unlock 15–20% more approvals from declined applications without elevating risk.
             </p>
           </div>
 

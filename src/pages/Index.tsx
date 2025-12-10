@@ -361,17 +361,17 @@ function Index() {
                     Estimated Annual Revenue Leakage
                   </h4>
                   <div className="space-y-4">
-                    <div className="flex justify-between items-baseline border-b border-border pb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 border-b border-border pb-4">
                       <span className="text-muted-foreground font-medium">Consumer:</span>
-                      <span className="text-2xl font-bold text-primary">$600M–$900M</span>
+                      <span className="text-2xl sm:text-2xl font-bold text-primary">$600M–$900M</span>
                     </div>
-                    <div className="flex justify-between items-baseline border-b border-border pb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 border-b border-border pb-4">
                       <span className="text-muted-foreground font-medium">Business:</span>
-                      <span className="text-2xl font-bold text-primary">$300M–$700M</span>
+                      <span className="text-2xl sm:text-2xl font-bold text-primary">$300M–$700M</span>
                     </div>
-                    <div className="flex justify-between items-baseline pt-2">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 pt-2">
                       <span className="text-foreground font-bold text-lg">Total:</span>
-                      <span className="text-3xl font-bold text-primary">$900M–$1.6B lost annually</span>
+                      <span className="text-3xl sm:text-3xl font-bold text-primary">$900M–$1.6B lost annually</span>
                     </div>
                   </div>
                 </CardContent>
@@ -390,19 +390,6 @@ function Index() {
             Benchmarking: Credit Journey, CreditWise, Close-Up, applied to Citi TAM.
           </motion.p>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-center mt-10"
-          >
-            <Button size="lg" variant="outline" className="group border-primary/50 hover:border-primary hover:bg-primary/10 px-8 py-6 text-lg font-semibold">
-              View Full Competitive Analysis
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </motion.div>
         </div>
       </section>
 
@@ -568,9 +555,18 @@ function Index() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex justify-center mt-12"
           >
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-7 text-xl group">
-              Review Citi Pilot Plan
-              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-7 text-xl group"
+            >
+              <Link
+                to="/pilot"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                Review Citi Pilot Plan
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
           </motion.div>
 
@@ -675,10 +671,15 @@ function Index() {
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Non-disruptive integration. Measurable results. Built on proven principles.
             </p>
-            <Button size="lg" className="gap-2 px-10 py-7 text-xl font-semibold" asChild>
-              <Link to="/pilot#pilot-form">
-                Book a 20-minute pilot review — see conversion lift & model audit in action
-                <ArrowRight className="w-6 h-6" />
+            <Button
+              size="lg"
+              className="w-full sm:w-auto max-w-xl gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-xs sm:text-sm md:text-base font-semibold text-center justify-center"
+              asChild
+            >
+              <Link to="/pilot#pilot-form" className="leading-snug whitespace-normal flex items-center justify-center gap-2">
+                <span className="hidden sm:inline">Book a 20-minute pilot review — see conversion lift & model audit in action</span>
+                <span className="sm:hidden">Book Pilot Review</span>
+                <ArrowRight className="inline-flex w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               </Link>
             </Button>
           </motion.div>

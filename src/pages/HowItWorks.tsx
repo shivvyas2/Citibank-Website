@@ -52,7 +52,7 @@ export default function HowItWorks() {
 
         {/* SECTION 1 — OVERVIEW (Hero) */}
         <section id="overview" className="relative overflow-hidden pt-8 md:pt-12 lg:pt-16 pb-20 md:pb-24 lg:pb-32 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Text Content - Left Side */}
@@ -119,7 +119,7 @@ export default function HowItWorks() {
 
         {/* SECTION 2 — HOW CITI USERS EXPERIENCE THE SYSTEM */}
         <section id="user-experience" className="py-20 md:py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
@@ -210,7 +210,7 @@ export default function HowItWorks() {
 
         {/* SECTION 3 — WHAT THE USER SEES */}
         <section id="what-users-see" className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
@@ -311,7 +311,7 @@ export default function HowItWorks() {
 
         {/* SECTION 4 — WHAT THE ENGINE DOES UNDER THE HOOD */}
         <section id="engine" className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-7xl mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
@@ -556,7 +556,7 @@ export default function HowItWorks() {
 
         {/* SECTION 5 — IMPACT ON CITI'S ECOSYSTEM */}
         <section id="impact" className="py-20 md:py-24 lg:py-32 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
@@ -573,7 +573,7 @@ export default function HowItWorks() {
               {/* What Citi Gains */}
               <div className="mb-12">
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-8 text-center">What Citi Gains</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 lg:gap-6">
                   {[
                     { value: "+12–24%", label: "Approval Lift (Consumer)", icon: TrendingUp },
                     { value: "+18–30%", label: "Approval Lift (Business)", icon: Building2 },
@@ -585,10 +585,10 @@ export default function HowItWorks() {
                     { value: "Dual-Layer", label: "Consumer + SMB Intelligence", icon: Zap }
                   ].map((item, idx) => (
                     <Card key={idx} className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                      <CardContent className="p-6 text-center">
-                        <item.icon className="w-8 h-8 text-foreground mx-auto mb-3" />
-                        <div className="text-2xl md:text-3xl font-bold text-foreground mb-2">{item.value}</div>
-                        <p className="text-xs text-muted-foreground">{item.label}</p>
+                      <CardContent className="p-4 sm:p-6 text-center">
+                        <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-foreground mx-auto mb-2 sm:mb-3" />
+                        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-1 sm:mb-2">{item.value}</div>
+                        <p className="text-xs text-muted-foreground leading-tight">{item.label}</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -641,7 +641,7 @@ export default function HowItWorks() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {[
                   { icon: Shield, title: "Citi's Own Logic", desc: "Uses Citi's existing underwriting rules — not external rules" },
                   { icon: Lock, title: "Zero Risk Interference", desc: "Zero interference with risk appetite" },
@@ -651,12 +651,12 @@ export default function HowItWorks() {
                   { icon: Database, title: "Flexible Deployment", desc: "On-prem or VPC deployment options" }
                 ].map((item, idx) => (
                   <Card key={idx} className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                    <CardContent className="p-6 md:p-8">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                        <item.icon className="w-6 h-6 text-primary" />
+                    <CardContent className="p-5 sm:p-6 md:p-8">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 sm:mb-4">
+                        <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                       </div>
-                      <h3 className="text-lg font-heading font-bold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                      <h3 className="text-base sm:text-lg font-heading font-bold mb-2">{item.title}</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -691,7 +691,7 @@ export default function HowItWorks() {
 
               <Card className="bg-card border border-border shadow-sm">
                 <CardContent className="p-8 md:p-10">
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                     {[
                       { icon: Globe, label: "Scales to 160+ markets" },
                       { icon: Database, label: "Works with credit bureau heterogeneity" },
@@ -700,11 +700,11 @@ export default function HowItWorks() {
                       { icon: Zap, label: "Deploys as modular eligibility microservice" },
                       { icon: Shield, label: "Regional compliance adaptability" }
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                          <item.icon className="w-6 h-6 text-primary" />
+                      <div key={idx} className="flex items-center gap-3 sm:gap-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                          <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                         </div>
-                        <span className="text-sm md:text-base text-foreground font-medium">{item.label}</span>
+                        <span className="text-xs sm:text-sm md:text-base text-foreground font-medium">{item.label}</span>
                       </div>
                     ))}
                   </div>
@@ -729,12 +729,12 @@ export default function HowItWorks() {
               </p>
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-7 text-xl shadow-lg"
+                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 sm:px-10 py-5 sm:py-7 text-lg sm:text-xl shadow-lg"
                 asChild
               >
                 <Link to="/pilot">
                   Start Citi Pilot
-                  <ArrowRight className="ml-3 h-6 w-6" />
+                  <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6" />
                 </Link>
               </Button>
             </motion.div>

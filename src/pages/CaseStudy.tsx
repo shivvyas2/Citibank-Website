@@ -45,7 +45,7 @@ export default function CaseStudy() {
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative overflow-hidden pt-8 md:pt-12 lg:pt-16 pb-20 md:pb-24 lg:pb-32 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Text Content - Left Side */}
@@ -84,10 +84,10 @@ export default function CaseStudy() {
         </section>
 
         {/* Case Study Summary Strip */}
-        <section className="py-12 px-6 bg-primary/5 border-y border-primary/20">
-          <div className="container mx-auto px-6">
+        <section className="py-12 px-4 sm:px-6 bg-primary/5 border-y border-primary/20">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-[1400px] mx-auto">
-              <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
                 <div className="space-y-2">
                   <div className="text-2xl md:text-3xl font-bold text-primary">18%</div>
                   <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">Incremental approvals identified</div>
@@ -107,7 +107,7 @@ export default function CaseStudy() {
 
         {/* Section 1 - Executive Diagnosis */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">01 — EXECUTIVE DIAGNOSIS</div>
@@ -204,7 +204,7 @@ export default function CaseStudy() {
 
         {/* Section 2 - Competitive Consequence */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">02 — COMPETITIVE CONSEQUENCE</div>
@@ -393,8 +393,8 @@ export default function CaseStudy() {
                     </div>
                     
                     {/* Content */}
-                    <div className="md:ml-24 flex-1">
-                      <Card className="bg-card border-2 border-foreground shadow-sm hover:shadow-md transition-all">
+                    <div className="md:ml-24 flex-1 w-full flex justify-center md:justify-start">
+                      <Card className="bg-card border-2 border-foreground shadow-sm hover:shadow-md transition-all w-full max-w-md md:max-w-none">
                         <CardContent className="p-6 md:p-8 text-center">
                           <AlertTriangle className="h-8 w-8 text-foreground mx-auto mb-4" />
                           <h3 className="text-xl font-heading font-bold text-foreground mb-2">Citi Never Sees Intent</h3>
@@ -413,7 +413,7 @@ export default function CaseStudy() {
 
         {/* Section 3 - Revenue Leakage */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">03 — REVENUE LEAKAGE & ECONOMIC IMPACT</div>
@@ -429,45 +429,45 @@ export default function CaseStudy() {
                 </p>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                  <Card className="h-full bg-card border border-border shadow-sm">
-                    <CardContent className="p-8">
-                      <div className="text-sm font-bold text-foreground tracking-wider mb-4 uppercase">LEAKAGE TODAY</div>
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center py-3 border-b border-border">
-                          <span className="text-foreground">Consumer</span>
-                          <span className="text-2xl font-bold text-foreground">$600M–$900M/year</span>
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8">
+                <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="flex justify-center md:justify-start">
+                  <Card className="h-full bg-card border border-border shadow-sm w-full max-w-md md:max-w-none">
+                    <CardContent className="p-4 sm:p-6 md:p-8">
+                      <div className="text-xs sm:text-sm font-bold text-foreground tracking-wider mb-3 sm:mb-4 uppercase text-center md:text-left">LEAKAGE TODAY</div>
+                      <div className="space-y-3 sm:space-y-4">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3 border-b border-border">
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Consumer</span>
+                          <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground text-center sm:text-right">$600M–$900M/year</span>
                         </div>
-                        <div className="flex justify-between items-center py-3 border-b border-border">
-                          <span className="text-foreground">SMB</span>
-                          <span className="text-2xl font-bold text-foreground">$300M–$700M/year</span>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3 border-b border-border">
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">SMB</span>
+                          <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground text-center sm:text-right">$300M–$700M/year</span>
                         </div>
-                        <div className="flex justify-between items-center py-3">
-                          <span className="font-semibold text-foreground">Total</span>
-                          <span className="text-3xl font-bold text-foreground">$900M–$1.6B+/year</span>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3">
+                          <span className="text-xs sm:text-sm md:text-base font-semibold text-foreground text-center sm:text-left">Total</span>
+                          <span className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground text-center sm:text-right">$900M–$1.6B+/year</span>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
                 </motion.div>
 
-                <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-                  <Card className="h-full bg-card border border-border shadow-sm">
-                    <CardContent className="p-8">
-                      <div className="text-sm font-bold text-foreground tracking-wider mb-4 uppercase">RECOVERED WITH LUMIQAI</div>
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center py-3 border-b border-border">
-                          <span className="text-foreground">Consumer Recovery</span>
-                          <span className="text-2xl font-bold text-foreground">$600M–$900M</span>
+                <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex justify-center md:justify-start">
+                  <Card className="h-full bg-card border border-border shadow-sm w-full max-w-md md:max-w-none">
+                    <CardContent className="p-4 sm:p-6 md:p-8">
+                      <div className="text-xs sm:text-sm font-bold text-foreground tracking-wider mb-3 sm:mb-4 uppercase text-center md:text-left">RECOVERED WITH LUMIQAI</div>
+                      <div className="space-y-3 sm:space-y-4">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3 border-b border-border">
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Consumer Recovery</span>
+                          <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground text-center sm:text-right">$600M–$900M</span>
                         </div>
-                        <div className="flex justify-between items-center py-3 border-b border-border">
-                          <span className="text-foreground">SMB Recovery</span>
-                          <span className="text-2xl font-bold text-foreground">$300M–$700M</span>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3 border-b border-border">
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">SMB Recovery</span>
+                          <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground text-center sm:text-right">$300M–$700M</span>
                         </div>
-                        <div className="flex justify-between items-center py-3">
-                          <span className="font-semibold text-foreground">Build Cost Avoided</span>
-                          <span className="text-xl font-bold text-foreground">$40M–$70M saved</span>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3">
+                          <span className="text-xs sm:text-sm md:text-base font-semibold text-foreground text-center sm:text-left">Build Cost Avoided</span>
+                          <span className="text-base sm:text-lg md:text-xl font-bold text-foreground text-center sm:text-right">$40M–$70M saved</span>
                         </div>
                       </div>
                     </CardContent>
@@ -486,7 +486,7 @@ export default function CaseStudy() {
 
         {/* Section 4 - Root Cause Analysis */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">04 — ROOT CAUSE ANALYSIS</div>
@@ -500,7 +500,7 @@ export default function CaseStudy() {
                 <p className="text-lg text-muted-foreground mb-2">Citi has no in-app:</p>
               </motion.div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
                 {[
                   { icon: Gauge, title: "No Score Panel" },
                   { icon: Target, title: "No Prequal" },
@@ -513,11 +513,11 @@ export default function CaseStudy() {
                 ].map((item, index) => (
                   <motion.div key={index} {...fadeInUp} transition={{ delay: index * 0.05 }}>
                     <Card className="h-full bg-card border border-border shadow-sm hover:shadow-md transition-shadow">
-                      <CardContent className="p-5 text-center">
-                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 mx-auto">
-                          <item.icon className="h-5 w-5 text-primary" />
+                      <CardContent className="p-3 sm:p-5 text-center">
+                        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-2 sm:mb-3 mx-auto">
+                          <item.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                         </div>
-                        <h4 className="font-semibold text-foreground text-sm">{item.title}</h4>
+                        <h4 className="font-semibold text-foreground text-xs sm:text-sm leading-tight">{item.title}</h4>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -566,7 +566,7 @@ export default function CaseStudy() {
 
         {/* Section 5 - Solution Overview */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">05 — THE SOLUTION</div>
@@ -656,7 +656,7 @@ export default function CaseStudy() {
 
         {/* Section 6 - Economic Impact Model */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">06 — ECONOMIC IMPACT MODEL</div>
@@ -666,27 +666,27 @@ export default function CaseStudy() {
                 <div className="h-px w-24 bg-primary mx-auto" />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {/* Consumer Impact */}
-                <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                  <Card className="h-full border-2 border-primary shadow-sm">
-                    <CardContent className="p-8">
-                      <h3 className="text-xl font-bold text-primary mb-6">Consumer Impact</h3>
-                      <div className="grid grid-cols-2 gap-6">
-                        <div>
-                          <div className="text-3xl font-bold text-foreground">+12–24%</div>
+                <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="flex justify-center md:justify-start">
+                  <Card className="h-full border-2 border-primary shadow-sm w-full max-w-md md:max-w-none">
+                    <CardContent className="p-6 sm:p-8">
+                      <h3 className="text-xl font-bold text-primary mb-6 text-center md:text-left">Consumer Impact</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-foreground">+12–24%</div>
                           <div className="text-sm text-muted-foreground">Approval uplift</div>
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-foreground">–25–40%</div>
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-foreground">–25–40%</div>
                           <div className="text-sm text-muted-foreground">Manual reviews</div>
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-foreground">2×–3×</div>
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-foreground">2×–3×</div>
                           <div className="text-sm text-muted-foreground">Engagement</div>
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-foreground">+5–10%</div>
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-foreground">+5–10%</div>
                           <div className="text-sm text-muted-foreground">CAC-free card conversions</div>
                         </div>
                       </div>
@@ -695,25 +695,25 @@ export default function CaseStudy() {
                 </motion.div>
 
                 {/* SMB Impact */}
-                <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-                  <Card className="h-full border-2 border-primary shadow-sm">
-                    <CardContent className="p-8">
-                      <h3 className="text-xl font-bold text-primary mb-6">SMB Impact</h3>
-                      <div className="grid grid-cols-2 gap-6">
-                        <div>
-                          <div className="text-3xl font-bold text-foreground">+18–30%</div>
+                <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex justify-center md:justify-start">
+                  <Card className="h-full border-2 border-primary shadow-sm w-full max-w-md md:max-w-none">
+                    <CardContent className="p-6 sm:p-8">
+                      <h3 className="text-xl font-bold text-primary mb-6 text-center md:text-left">SMB Impact</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-foreground">+18–30%</div>
                           <div className="text-sm text-muted-foreground">Approval uplift</div>
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-foreground">–35–50%</div>
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-foreground">–35–50%</div>
                           <div className="text-sm text-muted-foreground">Manual review reduction</div>
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-foreground">+5–12%</div>
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-foreground">+5–12%</div>
                           <div className="text-sm text-muted-foreground">SMB conversion</div>
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-primary">+$300M–$700M</div>
+                        <div className="text-center sm:text-left">
+                          <div className="text-2xl sm:text-3xl font-bold text-primary">+$300M–$700M</div>
                           <div className="text-sm text-muted-foreground">Revenue</div>
                         </div>
                       </div>
@@ -727,7 +727,7 @@ export default function CaseStudy() {
 
         {/* Section 7 - Why Now */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">07 — WHY NOW</div>
@@ -827,25 +827,25 @@ export default function CaseStudy() {
                       <h3 className="text-xl font-bold text-foreground mb-2">Window of Opportunity</h3>
                       <p className="text-muted-foreground">December 2025 – March 2026</p>
                     </div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-bold text-foreground">Dec 2025</span>
-                      <span className="text-sm font-bold text-foreground">Jan 2026</span>
-                      <span className="text-sm font-bold text-foreground">Mar 2026</span>
+                    <div className="flex items-center justify-between mb-4 text-xs sm:text-sm">
+                      <span className="font-bold text-foreground">Dec 2025</span>
+                      <span className="font-bold text-foreground">Jan 2026</span>
+                      <span className="font-bold text-foreground">Mar 2026</span>
                     </div>
                     <div className="relative h-6 bg-muted rounded-full overflow-hidden">
                       <div className="absolute left-0 right-0 h-full bg-gradient-to-r from-primary via-primary-light to-primary-dark rounded-full" />
                     </div>
-                    <div className="grid grid-cols-3 gap-4 mt-6 text-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 text-center">
                       <div>
-                        <div className="text-sm font-semibold text-foreground mb-1">Kickoff</div>
+                        <div className="text-xs sm:text-sm font-semibold text-foreground mb-1">Kickoff</div>
                         <div className="text-xs text-muted-foreground">Integration begins</div>
                       </div>
                       <div>
-                        <div className="text-sm font-semibold text-foreground mb-1">Risk Review</div>
+                        <div className="text-xs sm:text-sm font-semibold text-foreground mb-1">Risk Review</div>
                         <div className="text-xs text-muted-foreground">Compliance approval</div>
                       </div>
                       <div>
-                        <div className="text-sm font-semibold text-foreground mb-1">Go Live</div>
+                        <div className="text-xs sm:text-sm font-semibold text-foreground mb-1">Go Live</div>
                         <div className="text-xs text-muted-foreground">Pilot deployment</div>
                       </div>
                     </div>
@@ -858,7 +858,7 @@ export default function CaseStudy() {
 
         {/* Section 8 - Pilot Framework */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">08 — PILOT FRAMEWORK</div>
@@ -868,7 +868,7 @@ export default function CaseStudy() {
                 <div className="h-px w-24 bg-primary mx-auto" />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
                 {/* Track 1 */}
                 <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
                   <Card className="h-full border border-border shadow-sm">
@@ -906,8 +906,8 @@ export default function CaseStudy() {
 
               {/* Governance */}
               <motion.div {...fadeInUp}>
-                <Card className="bg-primary/10 border border-primary/30 shadow-sm">
-                  <CardContent className="p-8">
+                    <Card className="bg-primary/10 border border-primary/30 shadow-sm">
+                  <CardContent className="p-6 sm:p-8">
                     <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
                       <Shield className="h-6 w-6 text-primary" />
                       Governance (Critical for Citi)
@@ -937,39 +937,66 @@ export default function CaseStudy() {
 
               {/* Pilot Timeline */}
               <motion.div {...fadeInUp} className="mt-8">
-                <Card className="bg-card border border-border shadow-sm">
-                  <CardContent className="p-8">
-                    <h4 className="text-lg font-bold text-foreground mb-6 text-center">Pilot Timeline</h4>
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                      <div className="text-center flex-1">
-                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                          <span className="text-primary font-bold">1-2</span>
+                    <Card className="bg-card border border-border shadow-sm">
+                  <CardContent className="p-4 sm:p-6 md:p-8">
+                    <h4 className="text-base sm:text-lg font-bold text-foreground mb-4 sm:mb-6 text-center">Pilot Timeline</h4>
+                    
+                    {/* Mobile: Vertical Timeline */}
+                    <div className="sm:hidden space-y-6">
+                      {[
+                        { weeks: "1-2", label: "Weeks", desc: "Connect APIs, validate outputs" },
+                        { weeks: "3-4", label: "Weeks", desc: "Policy alignment" },
+                        { weeks: "5-8", label: "Weeks", desc: "A/B test in-app" },
+                        { weeks: "9-12", label: "Weeks", desc: "Review & scale decision" }
+                      ].map((item, index) => (
+                        <div key={index} className="relative">
+                          {index < 3 && (
+                            <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-primary/20" />
+                          )}
+                          <div className="flex items-start gap-4">
+                            <div className="h-10 w-10 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center flex-shrink-0 relative z-10">
+                              <span className="text-xs text-primary font-bold">{item.weeks}</span>
+                            </div>
+                            <div className="flex-1 pt-1">
+                              <p className="text-xs font-semibold text-foreground mb-1">{item.label}</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                            </div>
+                          </div>
                         </div>
-                        <p className="text-sm text-muted-foreground">Weeks</p>
+                      ))}
+                    </div>
+
+                    {/* Desktop: Horizontal Timeline */}
+                    <div className="hidden sm:flex flex-row justify-between items-start md:items-center gap-4">
+                      <div className="text-center flex-1">
+                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                          <span className="text-xs sm:text-sm text-primary font-bold">1-2</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Weeks</p>
                         <p className="text-xs text-muted-foreground/80">Connect APIs, validate outputs</p>
                       </div>
-                      <div className="hidden md:block h-px w-16 bg-primary/30" />
+                      <div className="hidden sm:block h-px w-8 sm:w-16 bg-primary/30" />
                       <div className="text-center flex-1">
-                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                          <span className="text-primary font-bold">3-4</span>
+                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                          <span className="text-xs sm:text-sm text-primary font-bold">3-4</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">Weeks</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Weeks</p>
                         <p className="text-xs text-muted-foreground/80">Policy alignment</p>
                       </div>
-                      <div className="hidden md:block h-px w-16 bg-primary/30" />
+                      <div className="hidden sm:block h-px w-8 sm:w-16 bg-primary/30" />
                       <div className="text-center flex-1">
-                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                          <span className="text-primary font-bold">5-8</span>
+                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                          <span className="text-xs sm:text-sm text-primary font-bold">5-8</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">Weeks</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Weeks</p>
                         <p className="text-xs text-muted-foreground/80">A/B test in-app</p>
                       </div>
-                      <div className="hidden md:block h-px w-16 bg-primary/30" />
+                      <div className="hidden sm:block h-px w-8 sm:w-16 bg-primary/30" />
                       <div className="text-center flex-1">
-                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                          <span className="text-primary font-bold">9-12</span>
+                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                          <span className="text-xs sm:text-sm text-primary font-bold">9-12</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">Weeks</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Weeks</p>
                         <p className="text-xs text-muted-foreground/80">Review & scale decision</p>
                       </div>
                     </div>
@@ -982,7 +1009,7 @@ export default function CaseStudy() {
 
         {/* Section 9 - Strategic Positioning */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
                 <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">09 — STRATEGIC POSITIONING</div>
@@ -1028,12 +1055,13 @@ export default function CaseStudy() {
               <motion.div {...fadeInUp}>
                 <Card className="border-2 border-primary overflow-hidden shadow-sm">
                   <CardContent className="p-0">
-                    <table className="w-full">
+                    <div className="w-full overflow-x-auto">
+                      <table className="w-full min-w-[320px]">
                       <thead className="bg-primary">
                         <tr>
-                          <th className="text-left p-4 text-primary-foreground font-semibold">Bank</th>
-                          <th className="text-center p-4 text-primary-foreground font-semibold">Consumer</th>
-                          <th className="text-center p-4 text-primary-foreground font-semibold">SMB</th>
+                          <th className="text-left p-2 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Bank</th>
+                          <th className="text-center p-2 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Consumer</th>
+                          <th className="text-center p-2 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">SMB</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -1045,45 +1073,46 @@ export default function CaseStudy() {
                           { bank: "Apple", logo: "/Case Study/WHy citi wins/Apple_Card.svg", consumer: true, smb: false },
                         ].map((row, index) => (
                           <tr key={index} className={index % 2 === 0 ? "bg-background-secondary" : "bg-background"}>
-                            <td className="p-4">
-                              <div className="flex items-center gap-3">
-                                <div className="w-12 h-8 flex items-center justify-center flex-shrink-0">
+                            <td className="p-2 sm:p-4">
+                              <div className="flex items-center gap-2 sm:gap-3">
+                                <div className="w-8 h-6 sm:w-12 sm:h-8 flex items-center justify-center flex-shrink-0">
                                   <img 
                                     src={row.logo} 
                                     alt={row.bank} 
-                                    className="h-6 w-auto object-contain"
+                                    className="h-4 sm:h-6 w-auto object-contain"
                                   />
                                 </div>
-                                <span className="font-medium text-foreground">{row.bank}</span>
+                                <span className="text-xs sm:text-sm font-medium text-foreground">{row.bank}</span>
                               </div>
                             </td>
-                            <td className="p-4 text-center">
+                            <td className="p-2 sm:p-4 text-center">
                               {row.consumer ? (
-                                <CheckCircle2 className="h-6 w-6 text-success mx-auto" />
+                                <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-success mx-auto" />
                               ) : (
-                                <XCircle className="h-6 w-6 text-muted-foreground mx-auto" />
+                                <XCircle className="h-4 w-4 sm:h-6 sm:w-6 text-muted-foreground mx-auto" />
                               )}
                             </td>
-                            <td className="p-4 text-center">
+                            <td className="p-2 sm:p-4 text-center">
                               {row.smb ? (
-                                <CheckCircle2 className="h-6 w-6 text-success mx-auto" />
+                                <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-success mx-auto" />
                               ) : (
-                                <XCircle className="h-6 w-6 text-muted-foreground mx-auto" />
+                                <XCircle className="h-4 w-4 sm:h-6 sm:w-6 text-muted-foreground mx-auto" />
                               )}
                             </td>
                           </tr>
                         ))}
                         <tr className="bg-primary/10 border-t-2 border-primary">
-                          <td className="p-4 font-bold text-primary">Citi + LumiqAI</td>
-                          <td className="p-4 text-center">
-                            <CheckCircle2 className="h-6 w-6 text-primary mx-auto" />
+                          <td className="p-2 sm:p-4 text-xs sm:text-sm font-bold text-primary">Citi + LumiqAI</td>
+                          <td className="p-2 sm:p-4 text-center">
+                            <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-primary mx-auto" />
                           </td>
-                          <td className="p-4 text-center">
-                            <CheckCircle2 className="h-6 w-6 text-primary mx-auto" />
+                          <td className="p-2 sm:p-4 text-center">
+                            <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-primary mx-auto" />
                           </td>
                         </tr>
                       </tbody>
-                    </table>
+                      </table>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -1092,8 +1121,8 @@ export default function CaseStudy() {
         </section>
 
         {/* Footnotes & Citations */}
-        <section className="py-16 md:py-20 px-6 bg-background">
-          <div className="container mx-auto px-6">
+        <section className="py-16 md:py-20 px-4 sm:px-6 bg-background">
+          <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <motion.div {...fadeInUp} className="mb-8">
                 <h3 className="text-lg font-bold text-foreground mb-4">Sources & References</h3>
@@ -1119,8 +1148,8 @@ export default function CaseStudy() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-24 md:py-32 px-6 bg-gradient-to-br from-primary via-primary to-secondary">
-          <div className="container mx-auto px-6">
+        <section className="py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-br from-primary via-primary to-secondary">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div {...fadeInUp}>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
