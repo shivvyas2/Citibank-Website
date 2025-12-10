@@ -650,15 +650,17 @@ export default function HowItWorks() {
                   { icon: CreditCard, title: "PCI DSS", desc: "PCI DSS compliant data handling" },
                   { icon: Database, title: "Flexible Deployment", desc: "On-prem or VPC deployment options" }
                 ].map((item, idx) => (
-                  <Card key={idx} className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                    <CardContent className="p-5 sm:p-6 md:p-8">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 sm:mb-4">
-                        <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-                      </div>
-                      <h3 className="text-base sm:text-lg font-heading font-bold mb-2">{item.title}</h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </CardContent>
-                  </Card>
+                  <div key={idx} className="flex justify-center sm:justify-start">
+                    <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all w-full max-w-sm sm:max-w-none">
+                      <CardContent className="p-5 sm:p-6 md:p-8">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 mx-auto sm:mx-0">
+                          <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-heading font-bold mb-2 text-center sm:text-left">{item.title}</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed text-center sm:text-left">{item.desc}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 ))}
               </div>
 

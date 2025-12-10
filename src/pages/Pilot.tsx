@@ -412,17 +412,17 @@ export default function Pilot() {
                   </div>
                   
                   {/* Content */}
-                  <div className="lg:ml-24 flex-1">
-                    <Card className="h-full border border-border bg-card shadow-sm">
+                  <div className="lg:ml-24 flex-1 w-full flex justify-center lg:justify-start">
+                    <Card className="h-full border border-border bg-card shadow-sm w-full max-w-md lg:max-w-none">
                       <CardContent className="p-4 sm:p-6">
-                        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
                           <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">1</div>
-                          <div>
+                          <div className="text-center lg:text-left">
                             <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 1</h3>
                             <p className="text-xs sm:text-sm text-primary font-medium">Weeks 1–3</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Alignment & Integration</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Alignment & Integration</h4>
                         <ul className="space-y-2">
                           {[
                             "Load Citi's product eligibility criteria",
@@ -460,17 +460,17 @@ export default function Pilot() {
                   </div>
                   
                   {/* Content */}
-                  <div className="lg:ml-24 flex-1">
-                    <Card className="h-full border border-border bg-card shadow-sm">
+                  <div className="lg:ml-24 flex-1 w-full flex justify-center lg:justify-start">
+                    <Card className="h-full border border-border bg-card shadow-sm w-full max-w-md lg:max-w-none">
                       <CardContent className="p-4 sm:p-6">
-                        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
                           <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">2</div>
-                          <div>
+                          <div className="text-center lg:text-left">
                             <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 2</h3>
                             <p className="text-xs sm:text-sm text-primary font-medium">Weeks 4–7</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Experience Layer & AI Eligibility</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Experience Layer & AI Eligibility</h4>
                         <ul className="space-y-2">
                           {[
                             "Build consumer & SMB journeys in-app",
@@ -507,17 +507,17 @@ export default function Pilot() {
                   </div>
                   
                   {/* Content */}
-                  <div className="lg:ml-24 flex-1">
-                    <Card className="h-full border border-border bg-card shadow-sm">
+                  <div className="lg:ml-24 flex-1 w-full flex justify-center lg:justify-start">
+                    <Card className="h-full border border-border bg-card shadow-sm w-full max-w-md lg:max-w-none">
                       <CardContent className="p-4 sm:p-6">
-                        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
                           <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">3</div>
-                          <div>
+                          <div className="text-center lg:text-left">
                             <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 3</h3>
                             <p className="text-xs sm:text-sm text-primary font-medium">Weeks 8–12</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Controlled Live Pilot</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Controlled Live Pilot</h4>
                         <ul className="space-y-2">
                           {[
                             "Go-live for limited consumer + SMB cohorts",
