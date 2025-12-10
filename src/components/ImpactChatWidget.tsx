@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, TrendingUp, DollarSign, Zap, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,20 +25,23 @@ export function ImpactChatWidget() {
         >
           {!isOpen ? (
             // Collapsed state - Chat bubble
-            <motion.button
-              onClick={() => setIsOpen(true)}
-              className="bg-primary text-primary-foreground rounded-full px-6 py-4 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 group"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5" />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-sm">Citi Impact Summary</div>
-                <div className="text-xs opacity-90">Click to view full impact</div>
-              </div>
-            </motion.button>
+              <Link
+                to="/pilot#pilot-form"
+                className="bg-primary text-primary-foreground rounded-full px-6 py-4 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 group"
+              >
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-sm">Citi Impact Summary</div>
+                  <div className="text-xs opacity-90">Click to view full impact</div>
+                </div>
+              </Link>
+            </motion.div>
           ) : (
             // Expanded state - Full impact summary
             <motion.div

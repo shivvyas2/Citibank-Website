@@ -14,3 +14,4 @@ export default function HeroBackground({ children }: HeroBackgroundProps) {
   );
 }
 
+

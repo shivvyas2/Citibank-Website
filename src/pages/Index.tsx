@@ -417,7 +417,8 @@ function Index() {
             className="mb-12 text-center"
           >
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-              The Impact: What Citi Gains
+              The Impact<br />
+              What Citi Gains
             </h3>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Modeled on Chase Credit Journey, Capital One CreditWise, Wells Fargo Close-Up, and calibrated to Citi's TAM.

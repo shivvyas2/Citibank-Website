@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Building2, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,8 +57,9 @@ export function Header() {
               initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }} 
               transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-            className="font-heading text-xl font-bold tracking-tight text-foreground"
+            className="font-sans text-xl font-black tracking-tighter text-foreground uppercase"
             whileHover={{ scale: 1.05 }}
+            style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif", letterSpacing: '-0.02em' }}
           >
               LUMIQ × Citi
           </motion.div>
@@ -81,15 +81,8 @@ export function Header() {
             ))}
           </ul>
 
-          {/* CTA Button & Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-4">
-            <Button
-              asChild
-              className="hidden md:inline-flex rounded-full bg-foreground text-background hover:bg-foreground/90"
-            >
-              <Link to="/pilot#pilot-form">Book Review</Link>
-            </Button>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -120,13 +113,6 @@ export function Header() {
           </Link>
               </li>
             ))}
-            <li className="pt-4">
-              <Button asChild className="w-full rounded-full">
-                <Link to="/pilot#pilot-form" onClick={() => setIsMobileMenuOpen(false)}>
-                  Book Review
-          </Link>
-              </Button>
-            </li>
           </ul>
       </div>
       )}

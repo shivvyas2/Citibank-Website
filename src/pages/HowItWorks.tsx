@@ -68,9 +68,11 @@ export default function HowItWorks() {
                     For both <span className="text-primary font-semibold">Consumer</span> and <span className="text-primary font-semibold">Business</span> — directly inside the Citi App.
                   </p>
                   
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Convert creditworthy applicants Citi currently declines — using income evidence, spending patterns, and payment discipline. 
-                    <span className="text-foreground font-medium">SPCP-compliant. Your rules. Controlled risk.</span>
+                  <p className="text-lg text-muted-foreground mb-2 leading-relaxed">
+                    Convert creditworthy applicants Citi currently declines — using income evidence, spending patterns, and payment discipline.
+                  </p>
+                  <p className="text-lg text-foreground font-medium mb-6 leading-relaxed">
+                    SPCP-compliant. Your rules. Controlled risk.
                   </p>
 
                   <Card className="bg-card border border-border shadow-sm mb-6">
@@ -125,54 +127,6 @@ export default function HowItWorks() {
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   Seamless credit intelligence integrated directly into the Citi App experience
                 </p>
-              </div>
-
-              {/* Mockup Images */}
-              <div className="grid md:grid-cols-2 gap-8 mb-16">
-                <div className="overflow-hidden">
-                  <div className="p-6 bg-primary/5 mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Smartphone className="w-5 h-5 text-primary" />
-                      </div>
-                      <span className="text-sm font-semibold text-primary uppercase tracking-wide">Consumer View</span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <img
-                      src="/How it works/How citi users experience/Consumer/1.png"
-                      alt="Consumer Citi App Experience 1"
-                      className="w-full h-auto"
-                    />
-                    <img
-                      src="/How it works/How citi users experience/Consumer/2.png"
-                      alt="Consumer Citi App Experience 2"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-                <div className="overflow-hidden">
-                  <div className="p-6 bg-secondary/5 mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-                        <Building2 className="w-5 h-5 text-secondary" />
-                      </div>
-                      <span className="text-sm font-semibold text-secondary uppercase tracking-wide">Business View</span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <img
-                      src="/How it works/How citi users experience/Business/1.png"
-                      alt="Business Citi App Experience 1"
-                      className="w-full h-auto"
-                    />
-                    <img
-                      src="/How it works/How citi users experience/Business/2.png"
-                      alt="Business Citi App Experience 2"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
               </div>
 
               {/* Step 1 & 2 */}
@@ -319,7 +273,7 @@ export default function HowItWorks() {
                   <div className="mb-6 overflow-hidden">
                     <div className="grid grid-cols-2 gap-4">
                       <img
-                        src="/How it works/what users see/business/1.png"
+                        src="/21.png"
                         alt="Business View 1"
                         className="w-full h-auto"
                       />
@@ -345,36 +299,6 @@ export default function HowItWorks() {
                       </div>
                     ))}
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* LumiqAI installs Citi's missing credit intelligence layer */}
-        <section className="py-20 md:py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto mb-16">
-              <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div className="overflow-hidden flex flex-col items-center">
-                  <div className="p-6 bg-secondary/10 mb-4 w-full">
-                    <h4 className="text-lg font-semibold text-foreground">Consumer</h4>
-                  </div>
-                  <img
-                    src="/How it works/LumiqAI installs Citi's missing credit intelligence layer/Citi Consumer LUMIQ.png"
-                    alt="Citi Consumer LUMIQ"
-                    className="w-full h-auto max-w-xs"
-                  />
-                </div>
-                <div className="overflow-hidden flex flex-col items-center">
-                  <div className="p-6 bg-primary/10 mb-4 w-full">
-                    <h4 className="text-lg font-semibold text-foreground">Business</h4>
-                  </div>
-                  <img
-                    src="/How it works/LumiqAI installs Citi's missing credit intelligence layer/Citi Business LUMIQ.png"
-                    alt="Citi Business LUMIQ"
-                    className="w-full h-auto max-w-xs"
-                  />
                 </div>
               </div>
             </motion.div>
@@ -491,7 +415,7 @@ export default function HowItWorks() {
                           {/* Business Mockup */}
                           <div className="mb-3 max-w-xs mx-auto">
                             <img
-                              src="/How it works/what users see/business/1.png"
+                              src="/21.png"
                               alt="Business Eligibility View"
                               className="w-full h-auto rounded-lg"
                             />

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
@@ -45,6 +46,21 @@ const competitorData = [
 ];
 
 export default function Pilot() {
+  const location = useLocation();
+
+  // Handle hash navigation when component mounts or hash changes
+  useEffect(() => {
+    if (location.hash === '#pilot-form') {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.getElementById('pilot-form');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   return (
     <PageLayout>
       {/* Hero */}
